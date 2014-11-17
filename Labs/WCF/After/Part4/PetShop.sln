@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShopOrderService", "PetShopOrderService\PetShopOrderService.csproj", "{CCADDEF3-2247-4785-9BBB-FDAA7C4888EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost1", "ServiceHost1\ServiceHost1.csproj", "{6FB9667C-B06F-4E55-868F-D80E1BF75900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client1", "Client1\Client1.csproj", "{E5D2504B-4CA9-42DD-BB04-3A51C6B44D50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCADDEF3-2247-4785-9BBB-FDAA7C4888EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCADDEF3-2247-4785-9BBB-FDAA7C4888EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCADDEF3-2247-4785-9BBB-FDAA7C4888EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCADDEF3-2247-4785-9BBB-FDAA7C4888EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB9667C-B06F-4E55-868F-D80E1BF75900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB9667C-B06F-4E55-868F-D80E1BF75900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB9667C-B06F-4E55-868F-D80E1BF75900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB9667C-B06F-4E55-868F-D80E1BF75900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5D2504B-4CA9-42DD-BB04-3A51C6B44D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D2504B-4CA9-42DD-BB04-3A51C6B44D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5D2504B-4CA9-42DD-BB04-3A51C6B44D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5D2504B-4CA9-42DD-BB04-3A51C6B44D50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

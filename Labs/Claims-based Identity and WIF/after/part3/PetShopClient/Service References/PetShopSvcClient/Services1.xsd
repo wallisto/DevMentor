@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:dm:petshop:messages" elementFormDefault="qualified" targetNamespace="urn:dm:petshop:messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9000/Services?xsd=xsd1" namespace="urn:dm:petshop:data" />
+  <xs:element xmlns:q1="urn:dm:petshop:data" name="Order" nillable="true" type="q1:Order" />
+</xs:schema>

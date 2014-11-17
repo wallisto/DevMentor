@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AcmeCorp.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AcmeCorpStoreContainer">
+    <EntitySet Name="PurchaseOrders" EntityType="AcmeCorp.Store.PurchaseOrders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PurchaseOrderLineItems" EntityType="AcmeCorp.Store.PurchaseOrderLineItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Suppliers" EntityType="AcmeCorp.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PurchaseOrderPurchaseOrderLineItem" Association="AcmeCorp.Store.PurchaseOrderPurchaseOrderLineItem">
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+      <End Role="PurchaseOrderLineItem" EntitySet="PurchaseOrderLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="SupplierPurchaseOrder" Association="AcmeCorp.Store.SupplierPurchaseOrder">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PurchaseOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaxValue" Type="decimal" Nullable="false" />
+    <Property Name="SupplierId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderLineItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="Position" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="PurchaseOrderPurchaseOrderLineItem">
+    <End Role="PurchaseOrder" Type="AcmeCorp.Store.PurchaseOrders" Multiplicity="1" />
+    <End Role="PurchaseOrderLineItem" Type="AcmeCorp.Store.PurchaseOrderLineItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrderLineItem">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SupplierPurchaseOrder">
+    <End Role="Supplier" Type="AcmeCorp.Store.Suppliers" Multiplicity="1" />
+    <End Role="PurchaseOrder" Type="AcmeCorp.Store.PurchaseOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="SupplierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AcmeCorp" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="AcmeCorpContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PurchaseOrders" EntityType="AcmeCorp.PurchaseOrder" />
+          <EntitySet Name="PurchaseOrderLineItems" EntityType="AcmeCorp.PurchaseOrderLineItem" />
+          <AssociationSet Name="PurchaseOrderPurchaseOrderLineItem" Association="AcmeCorp.PurchaseOrderPurchaseOrderLineItem">
+            <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+            <End Role="PurchaseOrderLineItem" EntitySet="PurchaseOrderLineItems" />
+          </AssociationSet>
+          <EntitySet Name="Suppliers" EntityType="AcmeCorp.Supplier" />
+          <AssociationSet Name="SupplierPurchaseOrder" Association="AcmeCorp.SupplierPurchaseOrder">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="MaxValue" Nullable="false" cg:SetterAccess="Public" />
+          <NavigationProperty Name="LineItems" Relationship="AcmeCorp.PurchaseOrderPurchaseOrderLineItem" FromRole="PurchaseOrder" ToRole="PurchaseOrderLineItem" cg:SetterAccess="Private" cg:GetterAccess="Private" />
+          <NavigationProperty Name="Supplier" Relationship="AcmeCorp.SupplierPurchaseOrder" FromRole="PurchaseOrder" ToRole="Supplier" />
+          <Property Type="Int32" Name="SupplierId" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderLineItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="false" />
+          <NavigationProperty Name="PurchaseOrder" Relationship="AcmeCorp.PurchaseOrderPurchaseOrderLineItem" FromRole="PurchaseOrderLineItem" ToRole="PurchaseOrder" />
+          <Property Type="Int32" Name="PurchaseOrderId" Nullable="false" />
+          <Property Type="Int32" Name="Position" Nullable="false" />
+        </EntityType>
+        <Association Name="PurchaseOrderPurchaseOrderLineItem">
+          <End Type="AcmeCorp.PurchaseOrder" Role="PurchaseOrder" Multiplicity="1" />
+          <End Type="AcmeCorp.PurchaseOrderLineItem" Role="PurchaseOrderLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurchaseOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrderLineItem">
+              <PropertyRef Name="PurchaseOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="PurchaseOrders" Relationship="AcmeCorp.SupplierPurchaseOrder" FromRole="Supplier" ToRole="PurchaseOrder" />
+        </EntityType>
+        <Association Name="SupplierPurchaseOrder">
+          <End Type="AcmeCorp.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="AcmeCorp.PurchaseOrder" Role="PurchaseOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PurchaseOrder">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AcmeCorpStoreContainer" CdmEntityContainer="AcmeCorpContainer">
+    <EntitySetMapping Name="PurchaseOrders">
+      <EntityTypeMapping TypeName="IsTypeOf(AcmeCorp.PurchaseOrder)">
+        <MappingFragment StoreEntitySet="PurchaseOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrderLineItems">
+      <EntityTypeMapping TypeName="IsTypeOf(AcmeCorp.PurchaseOrderLineItem)">
+        <MappingFragment StoreEntitySet="PurchaseOrderLineItems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="IsTypeOf(AcmeCorp.Supplier)">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="AcmeCorp" >
+        <EntityTypeShape EntityType="AcmeCorp.PurchaseOrder" Width="1.5" PointX="4.875" PointY="1.25" Height="2.172587890625" />
+        <EntityTypeShape EntityType="AcmeCorp.PurchaseOrderLineItem" Width="3.125" PointX="8.625" PointY="1.875" Height="2.3648893229166665" />
+        <AssociationConnector Association="AcmeCorp.PurchaseOrderPurchaseOrderLineItem">
+          <ConnectorPoint PointX="6.375" PointY="2.6487939453125" />
+          <ConnectorPoint PointX="8.625" PointY="2.6487939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AcmeCorp.Supplier" Width="1.5" PointX="1.25" PointY="1.25" Height="1.4033821614583326" />
+        <AssociationConnector Association="AcmeCorp.SupplierPurchaseOrder">
+          <ConnectorPoint PointX="2.75" PointY="2.047841796875" />
+          <ConnectorPoint PointX="4.875" PointY="2.047841796875" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

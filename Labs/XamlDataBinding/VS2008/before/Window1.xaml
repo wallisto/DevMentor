@@ -1,0 +1,9 @@
+﻿<Window x:Class="DataBinding.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DataBinding Test" Height="400" Width="450" ResizeMode="NoResize"
+    SizeToContent="WidthAndHeight" FontSize="16pt" Background="Goldenrod">
+
+    <Grid Margin="50" />
+
+</Window>

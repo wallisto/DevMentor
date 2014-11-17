@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeServer", "TimeServer\TimeServer.csproj", "{A7CED5C4-26E5-480A-9D50-4AEE6EE68193}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clock", "RunawayApp\Clock.csproj", "{E937CC36-8B7E-4C38-AF09-98F75C923A5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7CED5C4-26E5-480A-9D50-4AEE6EE68193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CED5C4-26E5-480A-9D50-4AEE6EE68193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CED5C4-26E5-480A-9D50-4AEE6EE68193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CED5C4-26E5-480A-9D50-4AEE6EE68193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E937CC36-8B7E-4C38-AF09-98F75C923A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E937CC36-8B7E-4C38-AF09-98F75C923A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E937CC36-8B7E-4C38-AF09-98F75C923A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E937CC36-8B7E-4C38-AF09-98F75C923A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

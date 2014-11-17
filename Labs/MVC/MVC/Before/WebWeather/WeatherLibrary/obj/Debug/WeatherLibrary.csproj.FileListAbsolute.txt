@@ -1,0 +1,5 @@
+D:\temp\WebWeather\WeatherLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\temp\WebWeather\WeatherLibrary\bin\Debug\WeatherLibrary.dll
+D:\temp\WebWeather\WeatherLibrary\bin\Debug\WeatherLibrary.pdb
+D:\temp\WebWeather\WeatherLibrary\obj\Debug\WeatherLibrary.dll
+D:\temp\WebWeather\WeatherLibrary\obj\Debug\WeatherLibrary.pdb

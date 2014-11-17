@@ -1,0 +1,79 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="RequestLoan.ServiceReference1.Activities.RequestApproval" this:RequestApproval.EndpointConfigurationName="BasicHttpBinding_IApprove"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:rs="clr-namespace:RequestLoan.ServiceReference1;assembly=RequestLoan, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:rs1="clr-namespace:RequestLoan.ServiceReference1;assembly=RequestLoan"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:this="clr-namespace:RequestLoan.ServiceReference1.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>BasicHttpBinding_IApprove</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="amount" Type="InArgument(x:Double)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="RequestApprovalResult" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IApprove/RequestApproval" OperationName="RequestApproval" ServiceContractName="p:IApprove">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="rs1:RequestApprovalRequest">[New RequestLoan.ServiceReference1.RequestApprovalRequest() With { .amount = amount }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IApprove/RequestApprovalResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="rs1:RequestApprovalResponse">
+          <VariableReference x:TypeArguments="rs1:RequestApprovalResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="rs1:RequestApprovalResponse" x:Name="__ReferenceID1" Name="tempResult_a54c7efb34714d03a8f7346145edeb58" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[RequestApprovalResult]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[tempResult_a54c7efb34714d03a8f7346145edeb58.RequestApprovalResult]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d6EBQzpcUlNLXFRyYWluaW5nTWF0ZXJpYWxzXEdORVRcTGFic1xXRlNlcnZpY2VzXEJlZm9yZVxSZXF1ZXN0TG9hblxTZXJ2aWNlIFJlZmVyZW5jZXNcU2VydmljZVJlZmVyZW5jZTFcUmVxdWVzdExvYW4uU2VydmljZVJlZmVyZW5jZTEuSUFwcHJvdmUuUmVxdWVzdEFwcHJvdmFsLnhhbWwJIANODgIBASUFOQ8CAQo6BUQXAgEHRQVMDgIBAjRCNJgBAgEMKg8uHwIBCz0LQR8CAQlKMUp0AgEFRzJHSQIBAw==</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>

@@ -1,0 +1,63 @@
+D:\temp\ConsoleApplication3\WinPhilosophers\bin\Debug\WinPhilosophers.exe
+D:\temp\ConsoleApplication3\WinPhilosophers\bin\Debug\WinPhilosophers.pdb
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\MainWindow.baml
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\MainWindow.g.cs
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\App.g.cs
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\WinPhilosophers_MarkupCompile.cache
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\WinPhilosophers_MarkupCompile.lref
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\WinPhilosophers.g.resources
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\WinPhilosophers.Properties.Resources.resources
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\WinPhilosophers.exe
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\WinPhilosophers.pdb
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\Views\DiningTableView.g.cs
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\Views\PhilosopherView.g.cs
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\Views\DiningTableView.baml
+D:\temp\ConsoleApplication3\WinPhilosophers\obj\x86\Debug\Views\PhilosopherView.baml
+D:\temp\ConsoleApplication3\WinPhilosophers\bin\Debug\DiningPhilosophers.dll
+D:\temp\ConsoleApplication3\WinPhilosophers\bin\Debug\DiningPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\bin\Debug\WinPhilosophers.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\bin\Debug\WinPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\bin\Debug\DiningPhilosophers.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\bin\Debug\DiningPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\MainWindow.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\Views\DiningTableView.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\Views\PhilosopherView.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\App.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\WinPhilosophers_MarkupCompile.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\WinPhilosophers_MarkupCompile.lref
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\MainWindow.baml
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\Views\DiningTableView.baml
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\Views\PhilosopherView.baml
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\WinPhilosophers.g.resources
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\WinPhilosophers.Properties.Resources.resources
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\WinPhilosophers.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WinPhilosophers\obj\x86\Debug\WinPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\WinPhilosophers.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\WinPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\bin\Debug\WinPhilosophers.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\bin\Debug\WinPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\bin\Debug\DiningPhilosophers.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\bin\Debug\DiningPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\MainWindow.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\Views\DiningTableView.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\Views\PhilosopherView.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\App.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\WinPhilosophers_MarkupCompile.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\WinPhilosophers_MarkupCompile.lref
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\MainWindow.baml
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\Views\DiningTableView.baml
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\Views\PhilosopherView.baml
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\WinPhilosophers.g.resources
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\WinPhilosophers.Properties.Resources.resources
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WinPhilosophers\obj\x86\Debug\GenerateResource.write.1.tlog

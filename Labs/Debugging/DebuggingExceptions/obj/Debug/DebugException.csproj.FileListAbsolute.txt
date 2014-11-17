@@ -1,0 +1,11 @@
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\bin\Debug\App.config
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\bin\Debug\DebugException.exe.config
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\bin\Debug\DebugException.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\bin\Debug\DebugException.pdb
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\obj\Debug\ResolveAssemblyReference.cache
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\obj\Debug\DebugException.Form1.resources
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\obj\Debug\DebugException.Properties.Resources.resources
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\obj\Debug\GenerateResource.read.1.tlog
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\obj\Debug\GenerateResource.write.1.tlog
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\obj\Debug\DebugException.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingExceptions\obj\Debug\DebugException.pdb

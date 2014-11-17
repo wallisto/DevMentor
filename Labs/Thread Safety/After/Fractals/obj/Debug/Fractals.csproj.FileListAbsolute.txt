@@ -1,0 +1,15 @@
+D:\temp\ConsoleApplication3\Fractals\bin\Debug\Fractals.dll
+D:\temp\ConsoleApplication3\Fractals\bin\Debug\Fractals.pdb
+D:\temp\ConsoleApplication3\Fractals\obj\Debug\ResolveAssemblyReference.cache
+D:\temp\ConsoleApplication3\Fractals\obj\Debug\Fractals.dll
+D:\temp\ConsoleApplication3\Fractals\obj\Debug\Fractals.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\Fractals\bin\Debug\Fractals.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\Fractals\bin\Debug\Fractals.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\Fractals\obj\Debug\ResolveAssemblyReference.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\Fractals\obj\Debug\Fractals.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\Fractals\obj\Debug\Fractals.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\Fractals\bin\Debug\Fractals.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\Fractals\bin\Debug\Fractals.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\Fractals\obj\Debug\ResolveAssemblyReference.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\Fractals\obj\Debug\Fractals.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\Fractals\obj\Debug\Fractals.pdb

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherLibrary", "WeatherLibrary\WeatherLibrary.csproj", "{C952F5F4-B266-47FF-A7D7-9E5050499823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWeather", "WebWeather\WebWeather.csproj", "{0B7201E4-6B3D-4910-8A88-6181A3F26558}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C952F5F4-B266-47FF-A7D7-9E5050499823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C952F5F4-B266-47FF-A7D7-9E5050499823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C952F5F4-B266-47FF-A7D7-9E5050499823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C952F5F4-B266-47FF-A7D7-9E5050499823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7201E4-6B3D-4910-8A88-6181A3F26558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7201E4-6B3D-4910-8A88-6181A3F26558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7201E4-6B3D-4910-8A88-6181A3F26558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7201E4-6B3D-4910-8A88-6181A3F26558}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

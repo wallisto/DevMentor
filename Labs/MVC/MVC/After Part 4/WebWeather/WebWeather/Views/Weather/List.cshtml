@@ -1,0 +1,30 @@
+﻿@model WebWeather.Models.WeatherStationModel
+@using WeatherLibrary
+
+<body>
+    <div>
+        <h2>@Model.Name</h2>
+
+        <table border="1">
+            <tr>
+             <th>  Year     </th>
+             <th> Month </th>
+             <th>  Min      </th>
+             <th>  Max      </th>
+             <th> Rainfall  </th>
+            </tr>
+
+      @foreach (WeatherLibrary.WeatherSample sample in Model.Samples)
+      {
+          <tr>
+              <td>@sample.Year</td>
+              <td>@sample.Month</td>
+              <td>@sample.MinTemperature</td>
+              <td>@sample.MaxTemperature</td>
+              <td>@sample.RainFall</td>
+          </tr>
+       }
+        </table>
+    </div>
+</body>
+

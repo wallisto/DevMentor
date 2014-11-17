@@ -1,0 +1,20 @@
+﻿
+@model WebWeather.Models.WeatherStationsModel
+
+<body>
+    <div>
+        <h1>Weather History</h1>
+        
+          @foreach (var stationGroup in Model.StationGroups)
+          {
+              <h1>@stationGroup.Key</h1>
+
+              foreach (string station in stationGroup)
+               {
+                   @Html.ActionLink(station, "ListPage", new {id = station})
+                   <br/>
+               }
+          }
+      </div>
+</body>
+

@@ -1,0 +1,10 @@
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\bin\Debug\Clock.exe.config
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\bin\Debug\Clock.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\bin\Debug\Clock.pdb
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\obj\Debug\ResolveAssemblyReference.cache
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\obj\Debug\Clock.ClockForm.resources
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\obj\Debug\Clock.Properties.Resources.resources
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\obj\Debug\GenerateResource.read.1.tlog
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\obj\Debug\GenerateResource.write.1.tlog
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\obj\Debug\Clock.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\RunawayApp\obj\Debug\Clock.pdb

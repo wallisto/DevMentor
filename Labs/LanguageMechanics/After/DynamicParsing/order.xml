@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<order orderId="123">
+  <customer>
+    <name>Wile E Coyote</name>
+    <address>The Desert</address>
+  </customer>
+  <orderItem>
+    <product>Rocket Powered Rollerskates</product>
+    <quantity>1</quantity>
+    <supplier>Acme Inc</supplier>
+  </orderItem>
+</order>

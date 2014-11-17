@@ -1,0 +1,24 @@
+D:\temp\ConsoleApplication3\WebServer\bin\Debug\WebServer.exe.config
+D:\temp\ConsoleApplication3\WebServer\bin\Debug\WebServer.exe
+D:\temp\ConsoleApplication3\WebServer\bin\Debug\WebServer.pdb
+D:\temp\ConsoleApplication3\WebServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\temp\ConsoleApplication3\WebServer\obj\x86\Debug\WebServer.exe
+D:\temp\ConsoleApplication3\WebServer\obj\x86\Debug\WebServer.pdb
+D:\temp\ConsoleApplication3\WebServer\bin\Debug\Fractals.dll
+D:\temp\ConsoleApplication3\WebServer\bin\Debug\Fractals.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\bin\Debug\WebServer.exe.config
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\bin\Debug\WebServer.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\bin\Debug\WebServer.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\bin\Debug\Fractals.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\bin\Debug\Fractals.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\obj\x86\Debug\WebServer.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\WebServer\obj\x86\Debug\WebServer.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\bin\Debug\WebServer.exe.config
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\bin\Debug\WebServer.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\bin\Debug\WebServer.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\bin\Debug\Fractals.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\bin\Debug\Fractals.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\obj\x86\Debug\WebServer.exe
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\After\WebServer\obj\x86\Debug\WebServer.pdb

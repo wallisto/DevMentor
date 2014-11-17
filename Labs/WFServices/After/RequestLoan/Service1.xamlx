@@ -1,0 +1,266 @@
+﻿<WorkflowService mc:Ignorable="sads sap sap2010" p1:TextExpression.Namespaces="{x:Reference __ReferenceID4}" p1:TextExpression.References="{x:Reference __ReferenceID5}" ConfigurationName="Service1" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="WorkflowService_1" Name="Service1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://develop.com/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:r="clr-namespace:RequestLoan;assembly=RequestLoan"
+ xmlns:rs="clr-namespace:RequestLoan.ServiceReference1;assembly=RequestLoan"
+ xmlns:rsa="clr-namespace:RequestLoan.ServiceReference1.Activities;assembly=RequestLoan"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <p1:Sequence DisplayName="Apply_ReceiveAndSendReply" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <p1:TextExpression.Namespaces>
+      <sco:Collection x:TypeArguments="x:String" x:Name="__ReferenceID4">
+        <x:String>System</x:String>
+        <x:String>System.Collections.Generic</x:String>
+        <x:String>System.Data</x:String>
+        <x:String>System.Linq</x:String>
+        <x:String>System.Text</x:String>
+        <x:String>RequestLoan</x:String>
+        <x:String>System.ServiceModel.Activities</x:String>
+      </sco:Collection>
+    </p1:TextExpression.Namespaces>
+    <p1:TextExpression.References>
+      <sco:Collection x:TypeArguments="p1:AssemblyReference" x:Name="__ReferenceID5">
+        <p1:AssemblyReference>Microsoft.CSharp</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.DynamicData</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Drawing</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web.ApplicationServices</p1:AssemblyReference>
+        <p1:AssemblyReference>System</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Core</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Data.Entity</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Runtime.Serialization</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Activities</p1:AssemblyReference>
+        <p1:AssemblyReference>System.ServiceModel.Channels</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Web</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xaml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Xml.Linq</p1:AssemblyReference>
+        <p1:AssemblyReference>System.Activities.Presentation</p1:AssemblyReference>
+        <p1:AssemblyReference>PresentationFramework</p1:AssemblyReference>
+        <p1:AssemblyReference>PresentationCore</p1:AssemblyReference>
+        <p1:AssemblyReference>WindowsBase</p1:AssemblyReference>
+        <p1:AssemblyReference>mscorlib</p1:AssemblyReference>
+        <p1:AssemblyReference>RequestLoan</p1:AssemblyReference>
+      </sco:Collection>
+    </p1:TextExpression.References>
+    <p1:Sequence.Variables>
+      <p1:Variable x:TypeArguments="x:Double" Name="loanAmount" />
+      <p1:Variable x:TypeArguments="x:Int32" Name="loanTerm" />
+      <p1:Variable x:TypeArguments="s:Random" Name="rnd">
+        <p1:Variable.Default>
+          <mca:CSharpValue x:TypeArguments="s:Random">new Random()</mca:CSharpValue>
+        </p1:Variable.Default>
+      </p1:Variable>
+      <p1:Variable x:TypeArguments="r:ApplyResponse" Name="applyResponse">
+        <p1:Variable.Default>
+          <mca:CSharpValue x:TypeArguments="r:ApplyResponse">new ApplyResponse()</mca:CSharpValue>
+        </p1:Variable.Default>
+      </p1:Variable>
+      <p1:Variable x:TypeArguments="x:Boolean" Name="approverDecision" />
+      <p1:Variable x:TypeArguments="CorrelationHandle" Name="loanHandle" />
+    </p1:Sequence.Variables>
+    <p1:Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <p1:Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+      </p1:Sequence.Variables>
+      <Receive x:Name="__ReferenceID0" Action="http://develop.com/ILoanService/Apply" CanCreateInstance="True" DisplayName="Apply_Receive" sap2010:WorkflowViewState.IdRef="Receive_1" OperationName="Apply" ProtectionLevel="None" ServiceContractName="p:ILoanService">
+        <Receive.CorrelationInitializers>
+          <RequestReplyCorrelationInitializer>
+            <RequestReplyCorrelationInitializer.CorrelationHandle>
+              <p1:InArgument x:TypeArguments="CorrelationHandle">
+                <p1:VariableValue x:TypeArguments="CorrelationHandle">
+                  <p1:VariableValue.Variable>
+                    <p1:Variable x:TypeArguments="CorrelationHandle" x:Name="__ReferenceID1" Name="__handle" />
+                  </p1:VariableValue.Variable>
+                </p1:VariableValue>
+              </p1:InArgument>
+            </RequestReplyCorrelationInitializer.CorrelationHandle>
+          </RequestReplyCorrelationInitializer>
+        </Receive.CorrelationInitializers>
+        <ReceiveParametersContent>
+          <p1:OutArgument x:TypeArguments="x:Double" x:Key="amount">
+            <mca:CSharpReference x:TypeArguments="x:Double">loanAmount</mca:CSharpReference>
+          </p1:OutArgument>
+          <p1:OutArgument x:TypeArguments="x:Int32" x:Key="term">
+            <mca:CSharpReference x:TypeArguments="x:Int32">loanTerm</mca:CSharpReference>
+          </p1:OutArgument>
+        </ReceiveParametersContent>
+      </Receive>
+      <p1:Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+        <p1:Assign.To>
+          <p1:OutArgument x:TypeArguments="x:Int32">
+            <mca:CSharpReference x:TypeArguments="x:Int32">applyResponse.ApplicationId</mca:CSharpReference>
+          </p1:OutArgument>
+        </p1:Assign.To>
+        <p1:Assign.Value>
+          <p1:InArgument x:TypeArguments="x:Int32">
+            <mca:CSharpValue x:TypeArguments="x:Int32">rnd.Next(1000)</mca:CSharpValue>
+          </p1:InArgument>
+        </p1:Assign.Value>
+      </p1:Assign>
+      <p1:Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+        <p1:Assign.To>
+          <p1:OutArgument x:TypeArguments="x:Double">
+            <mca:CSharpReference x:TypeArguments="x:Double">applyResponse.MonthlyRepayment</mca:CSharpReference>
+          </p1:OutArgument>
+        </p1:Assign.To>
+        <p1:Assign.Value>
+          <p1:InArgument x:TypeArguments="x:Double">
+            <mca:CSharpValue x:TypeArguments="x:Double">loanAmount / loanTerm * 2.0</mca:CSharpValue>
+          </p1:InArgument>
+        </p1:Assign.Value>
+      </p1:Assign>
+      <SendReply Request="{x:Reference __ReferenceID0}" Action="http://develop.com/ILoanService/ApplyResponse" DisplayName="Apply_SendReply" sap2010:WorkflowViewState.IdRef="SendReply_1">
+        <SendReply.CorrelationInitializers>
+          <QueryCorrelationInitializer>
+            <QueryCorrelationInitializer.CorrelationHandle>
+              <p1:InArgument x:TypeArguments="CorrelationHandle">
+                <mca:CSharpValue x:TypeArguments="CorrelationHandle">loanHandle</mca:CSharpValue>
+              </p1:InArgument>
+            </QueryCorrelationInitializer.CorrelationHandle>
+            <XPathMessageQuery x:Key="key1">
+              <XPathMessageQuery.Namespaces>
+                <ssx:XPathMessageContextMarkup>
+                  <x:String x:Key="xg0">http://schemas.datacontract.org/2004/07/RequestLoan</x:String>
+                  <x:String x:Key="xgSc">http://develop.com/</x:String>
+                </ssx:XPathMessageContextMarkup>
+              </XPathMessageQuery.Namespaces>sm:body()/xgSc:ApplyResponse/xgSc:ApplyResult/xg0:ApplicationId</XPathMessageQuery>
+          </QueryCorrelationInitializer>
+        </SendReply.CorrelationInitializers>
+        <SendParametersContent>
+          <p1:InArgument x:TypeArguments="r:ApplyResponse" x:Key="ApplyResult">
+            <mca:CSharpValue x:TypeArguments="r:ApplyResponse">applyResponse</mca:CSharpValue>
+          </p1:InArgument>
+        </SendParametersContent>
+      </SendReply>
+    </p1:Sequence>
+    <p1:If sap2010:WorkflowViewState.IdRef="If_1">
+      <p1:If.Condition>
+        <p1:InArgument x:TypeArguments="x:Boolean">
+          <mca:CSharpValue x:TypeArguments="x:Boolean">loanAmount &gt; 5000</mca:CSharpValue>
+        </p1:InArgument>
+      </p1:If.Condition>
+      <p1:If.Then>
+        <rsa:RequestApproval sap2010:WorkflowViewState.IdRef="RequestApproval_1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+          <rsa:RequestApproval.RequestApprovalResult>
+            <p1:OutArgument x:TypeArguments="x:Boolean">
+              <mca:CSharpReference x:TypeArguments="x:Boolean">approverDecision</mca:CSharpReference>
+            </p1:OutArgument>
+          </rsa:RequestApproval.RequestApprovalResult>
+          <rsa:RequestApproval.amount>
+            <p1:InArgument x:TypeArguments="x:Double">
+              <mca:CSharpValue x:TypeArguments="x:Double">loanAmount</mca:CSharpValue>
+            </p1:InArgument>
+          </rsa:RequestApproval.amount>
+        </rsa:RequestApproval>
+      </p1:If.Then>
+      <p1:If.Else>
+        <p1:Assign sap2010:WorkflowViewState.IdRef="Assign_3">
+          <p1:Assign.To>
+            <p1:OutArgument x:TypeArguments="x:Boolean">
+              <mca:CSharpReference x:TypeArguments="x:Boolean">approverDecision</mca:CSharpReference>
+            </p1:OutArgument>
+          </p1:Assign.To>
+          <p1:Assign.Value>
+            <p1:InArgument x:TypeArguments="x:Boolean">True</p1:InArgument>
+          </p1:Assign.Value>
+        </p1:Assign>
+      </p1:If.Else>
+    </p1:If>
+    <p1:Sequence DisplayName="Confirm_ReceiveAndSendReply" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <p1:Sequence.Variables>
+        <x:Reference>__ReferenceID3</x:Reference>
+      </p1:Sequence.Variables>
+      <Receive x:Name="__ReferenceID2" Action="http://develop.com/ILoanService/Confirm" DisplayName="Confirm_Receive" sap2010:WorkflowViewState.IdRef="Receive_2" OperationName="Confirm" ProtectionLevel="None" ServiceContractName="p:ILoanService">
+        <Receive.CorrelatesOn>
+          <XPathMessageQuery x:Key="key1">
+            <XPathMessageQuery.Namespaces>
+              <ssx:XPathMessageContextMarkup>
+                <x:String x:Key="xgSc">http://develop.com/</x:String>
+              </ssx:XPathMessageContextMarkup>
+            </XPathMessageQuery.Namespaces>sm:body()/xgSc:Confirm/xgSc:applicationId</XPathMessageQuery>
+        </Receive.CorrelatesOn>
+        <Receive.CorrelatesWith>
+          <p1:InArgument x:TypeArguments="CorrelationHandle">
+            <mca:CSharpValue x:TypeArguments="CorrelationHandle">loanHandle</mca:CSharpValue>
+          </p1:InArgument>
+        </Receive.CorrelatesWith>
+        <Receive.CorrelationInitializers>
+          <RequestReplyCorrelationInitializer>
+            <RequestReplyCorrelationInitializer.CorrelationHandle>
+              <p1:InArgument x:TypeArguments="CorrelationHandle">
+                <p1:VariableValue x:TypeArguments="CorrelationHandle">
+                  <p1:VariableValue.Variable>
+                    <p1:Variable x:TypeArguments="CorrelationHandle" x:Name="__ReferenceID3" Name="__handle" />
+                  </p1:VariableValue.Variable>
+                </p1:VariableValue>
+              </p1:InArgument>
+            </RequestReplyCorrelationInitializer.CorrelationHandle>
+          </RequestReplyCorrelationInitializer>
+        </Receive.CorrelationInitializers>
+        <ReceiveParametersContent>
+          <p1:OutArgument x:TypeArguments="x:Int32" x:Key="applicationId" />
+        </ReceiveParametersContent>
+      </Receive>
+      <SendReply Request="{x:Reference __ReferenceID2}" Action="http://develop.com/ILoanService/ConfirmResponse" DisplayName="Confirm_SendReply" sap2010:WorkflowViewState.IdRef="SendReply_2">
+        <SendParametersContent>
+          <p1:InArgument x:TypeArguments="x:Boolean" x:Key="ConfirmResult">
+            <mca:CSharpValue x:TypeArguments="x:Boolean">approverDecision</mca:CSharpValue>
+          </p1:InArgument>
+        </SendParametersContent>
+      </SendReply>
+    </p1:Sequence>
+    <sads:DebugSymbol.Symbol>d09DOlxSU0tcVHJhaW5pbmdNYXRlcmlhbHNcR05FVFxMYWJzXFdGU2VydmljZXNcQmVmb3JlXFJlcXVlc3RMb2FuXFNlcnZpY2UxLnhhbWx4HxQD5AERAQFBC0FVAQlGC0ZjAQJMBZYBEwFGlwEFtwENASa4AQXiARMBEFAHZhEBfGcHchMBa3MHfhMBWn8HlQETAUeaAQuaAV4BJ54BCakBHwE3rAEJtQEVAS68AQfaAREBHNsBB+EBEwERYw1jWgKGAWANYF0BflURWSQBfW8Nb1gBdGoNam0BbHsNe2YBY3YNdnEBW5IBDZIBXwFQhAERhAFiAUimAQ+mAVcBP6EBD6EBZgE4swE4swE8ATavAQ+vAWYBL8cBDccBXgEezgER0gEkAR3eAQ3eAVwBEg==</sads:DebugSymbol.Symbol>
+  </p1:Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Receive_1" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="255,62" />
+      <sap2010:ViewStateData Id="SendReply_1" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="467,548">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="RequestApproval_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="467,212" />
+      <sap2010:ViewStateData Id="Receive_2" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="SendReply_2" sap:VirtualizedContainerService.HintSize="255,90" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="467,344">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Type Type="r:ILoanService" x:Key="contractType" />
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="489,1308">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Type Type="r:ILoanService" x:Key="contractType" />
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WorkflowService_1" sap:VirtualizedContainerService.HintSize="519,1378" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</WorkflowService>

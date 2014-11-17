@@ -1,0 +1,6 @@
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\TimeServer\bin\Debug\TimeServer.exe.config
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\TimeServer\bin\Debug\TimeServer.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\TimeServer\bin\Debug\TimeServer.pdb
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\TimeServer\obj\Debug\ResolveAssemblyReference.cache
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\TimeServer\obj\Debug\TimeServer.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingThreads\TimeServer\obj\Debug\TimeServer.pdb

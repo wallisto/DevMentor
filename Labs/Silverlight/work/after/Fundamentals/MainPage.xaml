@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Fundamentals.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:my="clr-namespace:Fundamentals"
+	>
+	
+	<Grid>
+		<Grid.Background>
+			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+				<GradientStop Color="#FFCDCDCD"/>
+				<GradientStop Color="#FF7F7F7F" Offset="1"/>
+				<GradientStop Color="#FFD3D3D3" Offset="0.473"/>
+			</LinearGradientBrush>
+		</Grid.Background>
+	
+		<Grid x:Name="LayoutRoot" Margin="20">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<TextBlock FontSize="18" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Stretch" Text="First Name:" TextWrapping="NoWrap" Grid.Row="1" x:Name="lblFirstName"/>
+			<TextBlock FontSize="18" Margin="5,5,0,5" Text="Last Name:" TextWrapping="NoWrap" Grid.Row="2" HorizontalAlignment="Left" x:Name="lblLastName" />
+			<TextBlock FontSize="18" Margin="5,5,0,5" Text="Address Line 1:" TextWrapping="NoWrap" Grid.Row="3" HorizontalAlignment="Left" x:Name="lblLine1" />
+			<TextBlock FontSize="18" Margin="5,5,0,5" Text="Address Line 2:" TextWrapping="NoWrap" Grid.Row="4" HorizontalAlignment="Left" x:Name="lblLine2" />
+			<TextBlock FontSize="18" Margin="5,5,0,5" Text="Address Line 3:" TextWrapping="NoWrap" Grid.Row="5" HorizontalAlignment="Left" x:Name="lblLine3" />
+			<TextBlock FontSize="18" Margin="5,5,0,5" Text="Address Line 4:" TextWrapping="NoWrap" Grid.Row="6" HorizontalAlignment="Left" x:Name="lblLine4"/>
+			<TextBlock Grid.ColumnSpan="2" Margin="5,5,0,20" VerticalAlignment="Top" FontSize="32" Text="Address Entry Form" TextWrapping="NoWrap" x:Name="lblForm"/>
+			<TextBox my:TextBoxExtender.IsRequired="true" FontSize="18" Width="400" HorizontalAlignment="Left" Margin="10,5,5,5" Grid.Row="1" Text="" TextWrapping="NoWrap" Grid.Column="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" x:Name="txtFirstName" TabIndex="0"/>
+			<TextBox my:TextBoxExtender.IsRequired="true" FontSize="18" Width="400" HorizontalAlignment="Left" Margin="10,5,5,5" Text="" TextWrapping="NoWrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Grid.Column="1" Grid.Row="2" x:Name="txtLastName" TabIndex="1"/>
+			<TextBox my:TextBoxExtender.IsRequired="true" FontSize="18" Width="400" HorizontalAlignment="Left" Margin="10,5,5,5" Text="" TextWrapping="NoWrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Grid.Column="1" Grid.Row="3" x:Name="txtLine1" TabIndex="2"/>
+			<TextBox my:TextBoxExtender.IsRequired="true" FontSize="18" Width="400" HorizontalAlignment="Left" Margin="10,5,5,5" Text="" TextWrapping="NoWrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Grid.Column="1" Grid.Row="4" x:Name="txtLine2" TabIndex="3"/>
+			<TextBox FontSize="18" Width="400" HorizontalAlignment="Left" Margin="10,5,5,5" Text="" TextWrapping="NoWrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Grid.Column="1" Grid.Row="5" x:Name="txtLine3" TabIndex="4"/>
+			<TextBox FontSize="18" Width="400" HorizontalAlignment="Left" Margin="10,5,5,5" Text="" TextWrapping="NoWrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Grid.Column="1" Grid.Row="6" x:Name="txtLine4" TabIndex="5"/>
+			<Button FontSize="18" Margin="290,15,5,5" Content="Submit" Grid.Column="1" Grid.Row="7" Width="Auto" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Bottom" MinWidth="120" x:Name="btnSubmit" TabIndex="6"/>
+		</Grid>
+
+	</Grid>
+
+</UserControl>

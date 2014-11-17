@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="DataBinding.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600">
+
+  <Border Padding="5" BorderThickness="3" Background="PaleGreen" BorderBrush="DarkGreen" CornerRadius="15">
+    <Grid x:Name="LayoutRoot">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition MinWidth="340" Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="0.436*" />
+        <RowDefinition Height="0.564*"/>
+      </Grid.RowDefinitions>
+
+
+      <TextBlock Margin="5" Text="Contacts:" />
+      <ListBox Margin="5,0,5,5" Grid.Row="1" x:Name="lstContacts" Grid.RowSpan="2"  />
+
+      <Grid Grid.Row="1" Grid.Column="1" x:Name="gridDetails" VerticalAlignment="Stretch" >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Margin="5" Text="First name:" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="1" Margin="5" Text="Last name:" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="2" Margin="5" Text="Email:" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="3" Margin="5" Text="Phone:" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="4" Margin="5" Text="Mobile:" HorizontalAlignment="Right"/>
+        <TextBlock Grid.Row="5" Margin="5" Text="Category:" HorizontalAlignment="Right"/>
+
+        <TextBox Grid.Row="0" Margin="5" Grid.Column="1" x:Name="txtFirstName" />
+        <TextBox Grid.Row="1" Margin="5" Grid.Column="1" x:Name="txtLastName" />
+        <TextBox Grid.Row="2" Margin="5" Grid.Column="1" x:Name="txtEmail" />
+        <TextBox Grid.Row="3" Margin="5" Grid.Column="1" x:Name="txtPhone" />
+        <TextBox Grid.Row="4" Margin="5" Grid.Column="1" x:Name="txtMobile" />
+        <TextBox Grid.Row="5" Margin="5" Grid.Column="1" x:Name="txtCategory" />
+
+      </Grid>
+
+      <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" MaxHeight="50">
+        <Button x:Name="btnChangeContact" Background="Green" FontSize="14" Padding="5" Margin="5" VerticalContentAlignment="Center" Content="Change Contact" />
+        <Button x:Name="btnAddContact"    Background="Green" FontSize="14" Padding="5" Margin="5" VerticalContentAlignment="Center" Content="Add Contact(s)" />
+      </StackPanel>
+
+    </Grid>
+  </Border>
+</UserControl>

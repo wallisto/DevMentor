@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="pubsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="pubsModelStoreContainer">
+          <EntitySet Name="publishers" EntityType="pubsModel.Store.publishers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="titles" EntityType="pubsModel.Store.titles" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__titles__pub_id__08EA5793" Association="pubsModel.Store.FK__titles__pub_id__08EA5793">
+            <End Role="publishers" EntitySet="publishers" />
+            <End Role="titles" EntitySet="titles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="publishers">
+          <Key>
+            <PropertyRef Name="pub_id" />
+          </Key>
+          <Property Name="pub_id" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="pub_name" Type="varchar" MaxLength="40" />
+          <Property Name="city" Type="varchar" MaxLength="20" />
+          <Property Name="state" Type="char" MaxLength="2" />
+          <Property Name="country" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="titles">
+          <Key>
+            <PropertyRef Name="title_id" />
+          </Key>
+          <Property Name="title_id" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="title" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="type" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="pub_id" Type="char" MaxLength="4" />
+          <Property Name="price" Type="money" />
+          <Property Name="advance" Type="money" />
+          <Property Name="royalty" Type="int" />
+          <Property Name="ytd_sales" Type="int" />
+          <Property Name="notes" Type="varchar" MaxLength="200" />
+          <Property Name="pubdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__titles__pub_id__08EA5793">
+          <End Role="publishers" Type="pubsModel.Store.publishers" Multiplicity="0..1" />
+          <End Role="titles" Type="pubsModel.Store.titles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="publishers">
+              <PropertyRef Name="pub_id" />
+            </Principal>
+            <Dependent Role="titles">
+              <PropertyRef Name="pub_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pubsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Pubs" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Publishers" EntityType="pubsModel.Publisher" />
+          <EntitySet Name="Titles" EntityType="pubsModel.Title" />
+          <AssociationSet Name="FK__titles__pub_id__08EA5793" Association="pubsModel.FK__titles__pub_id__08EA5793">
+            <End Role="Publisher" EntitySet="Publishers" />
+            <End Role="title" EntitySet="Titles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Publisher">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="Name" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Country" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Titles" Relationship="pubsModel.FK__titles__pub_id__08EA5793" FromRole="Publisher" ToRole="title" />
+        </EntityType>
+        <EntityType Name="Title">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PubId" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Advance" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="Royalty" />
+          <Property Type="Int32" Name="YtdSales" />
+          <Property Type="String" Name="Notes" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="PubDate" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Publisher" Relationship="pubsModel.FK__titles__pub_id__08EA5793" FromRole="title" ToRole="Publisher" />
+        </EntityType>
+        <Association Name="FK__titles__pub_id__08EA5793">
+          <End Type="pubsModel.Publisher" Role="Publisher" Multiplicity="0..1" />
+          <End Type="pubsModel.Title" Role="title" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publisher">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="title">
+              <PropertyRef Name="PubId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pubsModelStoreContainer" CdmEntityContainer="Pubs">
+          <EntitySetMapping Name="Publishers">
+            <EntityTypeMapping TypeName="pubsModel.Publisher">
+              <MappingFragment StoreEntitySet="publishers">
+                <ScalarProperty Name="Id" ColumnName="pub_id" />
+                <ScalarProperty Name="Name" ColumnName="pub_name" />
+                <ScalarProperty Name="City" ColumnName="city" />
+                <ScalarProperty Name="State" ColumnName="state" />
+                <ScalarProperty Name="Country" ColumnName="country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Titles">
+            <EntityTypeMapping TypeName="pubsModel.Title">
+              <MappingFragment StoreEntitySet="titles">
+                <ScalarProperty Name="PubDate" ColumnName="pubdate" />
+                <ScalarProperty Name="Notes" ColumnName="notes" />
+                <ScalarProperty Name="YtdSales" ColumnName="ytd_sales" />
+                <ScalarProperty Name="Royalty" ColumnName="royalty" />
+                <ScalarProperty Name="Advance" ColumnName="advance" />
+                <ScalarProperty Name="Price" ColumnName="price" />
+                <ScalarProperty Name="PubId" ColumnName="pub_id" />
+                <ScalarProperty Name="Type" ColumnName="type" />
+                <ScalarProperty Name="Name" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="title_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

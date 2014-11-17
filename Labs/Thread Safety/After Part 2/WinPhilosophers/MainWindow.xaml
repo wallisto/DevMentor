@@ -1,0 +1,14 @@
+﻿<Window x:Class="WinPhilosophers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dpc="clr-namespace:WinPhilosophers.Views"
+        Title="Dining Philosophers" Height="900" Width="900">
+    <DockPanel LastChildFill="true">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Start"  Command="{Binding StartCommand}"/>
+            </MenuItem>
+        </Menu>
+        <dpc:DiningTableView />
+    </DockPanel>
+</Window>

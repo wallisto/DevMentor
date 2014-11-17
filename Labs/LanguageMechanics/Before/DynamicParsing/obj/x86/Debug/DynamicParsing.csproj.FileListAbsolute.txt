@@ -1,0 +1,5 @@
+D:\Repositories\TrainingMaterials\GNET\Labs\LanguageMechanics\Before\DynamicParsing\bin\Debug\DynamicParsing.exe
+D:\Repositories\TrainingMaterials\GNET\Labs\LanguageMechanics\Before\DynamicParsing\bin\Debug\DynamicParsing.pdb
+D:\Repositories\TrainingMaterials\GNET\Labs\LanguageMechanics\Before\DynamicParsing\obj\x86\Debug\DynamicParsing.csprojResolveAssemblyReference.cache
+D:\Repositories\TrainingMaterials\GNET\Labs\LanguageMechanics\Before\DynamicParsing\obj\x86\Debug\DynamicParsing.exe
+D:\Repositories\TrainingMaterials\GNET\Labs\LanguageMechanics\Before\DynamicParsing\obj\x86\Debug\DynamicParsing.pdb

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WinPhilosophers.Views.PhilosopherView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dpc="clr-namespace:WinPhilosophers.Converters"
+             xmlns:dp="clr-namespace:DiningPhilosophers;assembly=DiningPhilosophers"
+             mc:Ignorable="d" 
+             >
+    <UserControl.Resources>
+        <dpc:EnumToBrushConverter EnumType="{x:Type dp:PhilospherState}" x:Key="StateBrushConverter">
+            <dpc:EnumToBrushConverter.BrushMap>
+                <SolidColorBrush Color="Red" x:Key="HUNGRY"/>
+                <SolidColorBrush Color="Green" x:Key="EATING"/>
+                <SolidColorBrush Color="Blue" x:Key="THINKING"/>
+            </dpc:EnumToBrushConverter.BrushMap>
+        </dpc:EnumToBrushConverter>
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Canvas Width="20" Height="40" Margin="5">
+                <Line X1="10" X2="10" Y2="40" Stroke="Black"/>
+                <Line X2="20" Y1="10" Y2="10" Stroke="Black"/>
+
+                <Line Y1="10" Stroke="Black"/>
+                <Line X1="20" X2="20" Y2="10" Stroke="Black"/>
+            </Canvas>
+            <Ellipse Width="40" Height="40" Fill="{Binding State,Converter={StaticResource StateBrushConverter}}" Margin="5"/>
+    </StackPanel>
+    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
+        <TextBlock Text="{Binding BitesPerSecond}" HorizontalAlignment="Center" /> 
+    </StackPanel>
+</UserControl>

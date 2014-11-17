@@ -1,0 +1,10 @@
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\bin\Debug\TestClient.exe.config
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\bin\Debug\TestClient.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\bin\Debug\TestClient.pdb
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\obj\Debug\ResolveAssemblyReference.cache
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\obj\Debug\TestClient.Form1.resources
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\obj\Debug\TestClient.Properties.Resources.resources
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\obj\Debug\GenerateResource.read.1.tlog
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\obj\Debug\GenerateResource.write.1.tlog
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\obj\Debug\TestClient.exe
+C:\RSK\TrainingMaterials\GNET\Labs\Debugging\DebuggingMemory\TestClient\obj\Debug\TestClient.pdb

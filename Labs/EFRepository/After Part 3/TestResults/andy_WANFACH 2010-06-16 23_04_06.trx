@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5c8942ad-67ad-4494-8e15-c3e55f512f1e" name="andy@WANFACH 2010-06-16 23:04:06" runUser="wanfach\andy" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="11316c2d-f92d-4fba-885b-ed35da5a29fd">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="andy_WANFACH 2010-06-16 23_04_06">
+      <DeploymentItem filename="D:\TrainingMaterials\trunk\GNET\Labs\EFRepository\After Part 3\AcmeCorpEntities\bin\Debug\AcmeCorpEntities.dll" />
+      <DeploymentItem filename="D:\TrainingMaterials\trunk\GNET\Labs\EFRepository\After Part 3\AcmeCorpServices\bin\Debug\AcmeCorpServices.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2010-06-16T23:04:06.2737280+01:00" queuing="2010-06-16T23:04:07.2437835+01:00" start="2010-06-16T23:04:07.3187878+01:00" finish="2010-06-16T23:04:08.9318800+01:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestGetAllOpenPurchaseOrders" storage="d:\trainingmaterials\trunk\gnet\labs\efrepository\after part 3\testacmecorpservices\bin\debug\testacmecorpservices.dll" id="01a57e75-a8e5-39d3-e644-ddb0951d7467">
+      <Execution id="cb74712b-b7f7-4cf6-8ae4-0d812bf84cd4" />
+      <TestMethod codeBase="D:/TrainingMaterials/trunk/GNET/Labs/EFRepository/After Part 3/TestAcmeCorpServices/bin/Debug/TestAcmeCorpServices.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAcmeCorpServices.TestPurchaseOrderService, TestAcmeCorpServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestGetAllOpenPurchaseOrders" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="01a57e75-a8e5-39d3-e644-ddb0951d7467" executionId="cb74712b-b7f7-4cf6-8ae4-0d812bf84cd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="cb74712b-b7f7-4cf6-8ae4-0d812bf84cd4" testId="01a57e75-a8e5-39d3-e644-ddb0951d7467" testName="TestGetAllOpenPurchaseOrders" computerName="WANFACH" duration="00:00:00.0309594" startTime="2010-06-16T23:04:07.3707908+01:00" endTime="2010-06-16T23:04:08.8898776+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb74712b-b7f7-4cf6-8ae4-0d812bf84cd4">
+    </UnitTestResult>
+  </Results>
+</TestRun>

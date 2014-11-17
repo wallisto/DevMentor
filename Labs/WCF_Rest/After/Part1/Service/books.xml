@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<books xmlns="http://develop.com">
+  <book>
+    <title>CLR via C#, Second Edition</title>
+    <authors>
+      <author>Jeffrey Richter</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>.Net General</topic>
+    <link>http://www.amazon.com/gp/product/0735621632/sr=8-1/qid=1141842947/ref=pd_bbs_1/103-3403410-7338268?_encoding=UTF8</link>
+    <price>35.99</price>
+    <isbn>0735621632</isbn>
+  </book>
+  <book>
+    <title>Data Binding with Windows Forms 2.0</title>
+    <authors>
+      <author>Brian Noyes</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>Windows Forms</topic>
+    <link>http://www.amazon.com/Data-Binding-Windows-Forms-2-0/dp/032126892X/ref=pd_bxgy_b_img_b</link>
+    <price>32.99</price>
+    <isbn>032126892X</isbn>
+  </book>
+  <book>
+    <title>Essential ASP.NET 2.0</title>
+    <authors>
+      <author>Fritz Onion</author>
+      <author>Keith Brown</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>Web Apps</topic>
+    <link>http://www.amazon.com/Essential-ASP-NET-2-0-Fritz-Onion/dp/0321237706/ref=pd_bbs_sr_1/103-2749730-3599818?ie=UTF8&amp;s=books&amp;qid=1176902837&amp;sr=8-1</link>
+    <price>36.99</price>
+    <isbn>0321237706</isbn>
+  </book>
+  <book>
+    <title>Essential ASP.NET With Examples in C#</title>
+    <authors>
+      <author>Fritz Onion</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>Web Apps</topic>
+    <link>http://www.amazon.com/Essential-ASP-NET-Examples-Fritz-Onion/dp/0201760401/ref=pd_bbs_sr_2/103-2749730-3599818?ie=UTF8&amp;s=books&amp;qid=1176902837&amp;sr=8-2</link>
+    <price>31.49</price>
+    <isbn>0201760401</isbn>
+  </book>
+  <book>
+    <title>Essential C# 2.0</title>
+    <authors>
+      <author>Mark Michaelis</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>C# Language</topic>
+    <link>http://www.amazon.com/Essential-2-0-Microsoft-NET-Development/dp/0321150775/ref=pd_bxgy_b_text_b/102-4792916-8428135?ie=UTF8&amp;qid=1174210886&amp;sr=1-2</link>
+    <price>37.79</price>
+    <isbn>0321150775</isbn>
+  </book>
+  <book>
+    <title>Essential Windows Presentation Foundation</title>
+    <authors>
+      <author>Chris Anderson</author>
+    </authors>
+    <category>.Net 3.0</category>
+    <topic>Presentation Foundation</topic>
+    <link>http://www.amazon.com/Essential-Presentation-Foundation-Microsoft-Development/dp/0321374479/ref=sr_1_1/002-9650384-5136050?ie=UTF8&amp;s=books&amp;qid=1188296520&amp;sr=8-1</link>
+    <price>31.49</price>
+    <isbn>0321374479</isbn>
+  </book>
+  <book>
+    <title>Essential Windows Workflow Foundation</title>
+    <authors>
+      <author>Dharma Shukla</author>
+      <author>Bob Schmidt</author>
+    </authors>
+    <category>.Net 3.0</category>
+    <topic>Workflow Foundation</topic>
+    <link>http://www.amazon.com/Essential-Workflow-Foundation-Microsoft-Development/dp/0321399838/ref=pd_bbs_sr_1/102-1611469-3153757?ie=UTF8&amp;s=books&amp;qid=1192436658&amp;sr=8-1</link>
+    <price>31.49</price>
+    <isbn>0321399838</isbn>
+  </book>
+  <book>
+    <title>Learning WCF</title>
+    <authors>
+      <author>Michele Bustamante</author>
+    </authors>
+    <category>.Net 3.0</category>
+    <topic>Communication Foundation</topic>
+    <link>http://www.amazon.com/Learning-WCF-Hands-Michele-Bustamante/dp/0596101627/ref=pd_bbs_sr_1/103-2749730-3599818?ie=UTF8&amp;s=books&amp;qid=1176904112&amp;sr=8-1</link>
+    <price>29.69</price>
+    <isbn>0596101627</isbn>
+  </book>
+  <book>
+    <title>LINQ in Action</title>
+    <authors>
+      <author>Fabrice Marguerie</author>
+      <author>Steve Eichert</author>
+      <author>Jim Wooley</author>
+    </authors>
+    <category>.Net 3.5</category>
+    <topic>LINQ</topic>
+    <link>http://www.amazon.com/LINQ-Action-Fabrice-Marguerie/dp/1933988169/ref=pd_bbs_sr_1?ie=UTF8&amp;s=books&amp;qid=1202326210&amp;sr=1-1</link>
+    <price>29.69</price>
+    <isbn>1933988169</isbn>
+  </book>
+  <book>
+    <title>Programming .NET Components, 2nd Edition</title>
+    <authors>
+      <author>Juval Lowy</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>.Net General</topic>
+    <link>http://www.amazon.com/gp/product/0596102070/ref=pd_kar_gw_1/103-3403410-7338268?_encoding=UTF8&amp;v=glance&amp;n=283155</link>
+    <price>29.67</price>
+    <isbn>0596102070</isbn>
+  </book>
+  <book>
+    <title>Programming WCF Services</title>
+    <authors>
+      <author>Juval Lowy</author>
+    </authors>
+    <category>.Net 3.0</category>
+    <topic>Communication Foundation</topic>
+    <link>http://www.amazon.com/Programming-WCF-Services-Juval-Lowy/dp/0596526997/ref=pd_bbs_sr_1/102-1611469-3153757?ie=UTF8&amp;s=books&amp;qid=1192436749&amp;sr=8-1</link>
+    <price>29.69</price>
+    <isbn>0596526997</isbn>
+  </book>
+  <book>
+    <title>Programming Windows Workflow Foundation</title>
+    <authors>
+      <author>K. Scott Allen</author>
+    </authors>
+    <category>.Net 3.0</category>
+    <topic>Workflow Foundation</topic>
+    <link>http://www.amazon.com/Programming-Windows-Workflow-Foundation-Techniques/dp/1904811213/ref=sr_1_1/102-1611469-3153757?ie=UTF8&amp;s=books&amp;qid=1192436585&amp;sr=8-1</link>
+    <price>44.99</price>
+    <isbn>1904811213</isbn>
+  </book>
+  <book>
+    <title>Smart Client Deployment with ClickOnce</title>
+    <authors>
+      <author>Brian Noyes</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>Windows Forms</topic>
+    <link>http://www.amazon.com/Smart-Client-Deployment-ClickOnce-Applications/dp/0321197690/ref=pd_bbs_sr_1/102-5394843-6848112?ie=UTF8&amp;s=books&amp;qid=1175345601&amp;sr=8-1</link>
+    <price>29.69</price>
+    <isbn>0321197690</isbn>
+  </book>
+  <book>
+    <title>Understanding Windows CardSpace</title>
+    <authors>
+      <author>Vittorio Bertocci</author>
+      <author>Garrett Serack</author>
+      <author>Caleb Baker</author>
+    </authors>
+    <category>.Net 3.0</category>
+    <topic>CardSpace</topic>
+    <link>http://www.amazon.com/Understanding-Windows-CardSpace-Introduction-Independent/dp/0321496841/ref=sr_1_1/102-1611469-3153757?ie=UTF8&amp;s=books&amp;qid=1192436821&amp;sr=8-1</link>
+    <price>32.84</price>
+    <isbn>0321496841</isbn>
+  </book>
+  <book>
+    <title>Windows Forms 2.0 Programming (2nd Edition)</title>
+    <authors>
+      <author>Chris Sells</author>
+      <author>Michael Weinhardt</author>
+    </authors>
+    <category>.Net 2.0</category>
+    <topic>Windows Forms</topic>
+    <link>http://www.amazon.com/gp/product/0321267966/qid=1141845579/sr=1-1/ref=sr_1_1/103-3403410-7338268?s=books&amp;v=glance&amp;n=283155</link>
+    <price>32.39</price>
+    <isbn>0321267966</isbn>
+  </book>
+  <book>
+    <title>Windows Presentation Foundation Unleashed</title>
+    <authors>
+      <author>Adam Nathan</author>
+    </authors>
+    <category>.Net 3.0</category>
+    <topic>Presentation Foundation</topic>
+    <link>http://www.amazon.com/Windows-Presentation-Foundation-Unleashed-WPF/dp/0672328917/ref=pd_bbs_sr_1/103-2749730-3599818?ie=UTF8&amp;s=books&amp;qid=1176903814&amp;sr=8-1</link>
+    <price>34.49</price>
+    <isbn>0672328917</isbn>
+  </book>
+</books>

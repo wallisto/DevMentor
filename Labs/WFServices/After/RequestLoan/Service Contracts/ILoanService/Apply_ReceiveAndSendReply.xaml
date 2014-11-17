@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ActivityTemplateFactory x:Class="ILoanService.Apply_ReceiveAndSendReply" x:TypeArguments="p1:Sequence" xmlns="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation/toolbox" xmlns:p="http://develop.com/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:p2="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:r="clr-namespace:RequestLoan;assembly=RequestLoan" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <p1:Sequence DisplayName="Apply_ReceiveAndSendReply">
+    <p1:Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+    </p1:Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Type Type="r:ILoanService" x:Key="contractType" />
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <p2:Receive x:Name="__ReferenceID0" Action="http://develop.com/ILoanService/Apply" DisplayName="Apply_Receive" OperationName="Apply" ProtectionLevel="None" ServiceContractName="p:ILoanService">
+      <p2:Receive.CorrelationInitializers>
+        <p2:RequestReplyCorrelationInitializer>
+          <p2:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <p1:InArgument x:TypeArguments="p2:CorrelationHandle">
+              <p1:VariableValue x:TypeArguments="p2:CorrelationHandle">
+                <p1:VariableValue.Variable>
+                  <p1:Variable x:TypeArguments="p2:CorrelationHandle" x:Name="__ReferenceID1" Name="__handle" />
+                </p1:VariableValue.Variable>
+              </p1:VariableValue>
+            </p1:InArgument>
+          </p2:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p2:RequestReplyCorrelationInitializer>
+      </p2:Receive.CorrelationInitializers>
+      <p2:ReceiveParametersContent>
+        <p1:OutArgument x:TypeArguments="x:Double" x:Key="amount" />
+        <p1:OutArgument x:TypeArguments="x:Int32" x:Key="term" />
+      </p2:ReceiveParametersContent>
+    </p2:Receive>
+    <p2:SendReply Request="{x:Reference __ReferenceID0}" Action="http://develop.com/ILoanService/ApplyResponse" DisplayName="Apply_SendReply">
+      <p2:SendParametersContent>
+        <p1:InArgument x:TypeArguments="r:ApplyResponse" x:Key="ApplyResult" />
+      </p2:SendParametersContent>
+    </p2:SendReply>
+  </p1:Sequence>
+</ActivityTemplateFactory>

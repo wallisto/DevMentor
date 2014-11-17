@@ -1,0 +1,14 @@
+﻿<Window x:Class="PictureBoard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:me="clr-namespace:PictureBoard"
+        Title="Picture Board" Height="350" Width="525">
+    <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="True" Margin="3" >
+            <Label DockPanel.Dock="Left">Pictures to Retrieve:</Label>
+            <Button DockPanel.Dock="Right" Padding="5" Command="me:Commands.GetPictures">Get Pictures</Button>
+            <TextBox x:Name="numPictures" Text="1"/>
+        </DockPanel>
+        <Canvas x:Name="board" Background="Black" ClipToBounds="True"/>
+    </DockPanel>
+</Window>

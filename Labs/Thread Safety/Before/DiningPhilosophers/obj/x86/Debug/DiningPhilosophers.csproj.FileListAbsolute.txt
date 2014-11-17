@@ -1,0 +1,12 @@
+D:\temp\ConsoleApplication3\ConsoleApplication3\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\temp\ConsoleApplication3\ConsoleApplication3\bin\Debug\DiningPhilosophers.dll.config
+D:\temp\ConsoleApplication3\ConsoleApplication3\bin\Debug\DiningPhilosophers.dll
+D:\temp\ConsoleApplication3\ConsoleApplication3\bin\Debug\DiningPhilosophers.pdb
+D:\temp\ConsoleApplication3\ConsoleApplication3\obj\x86\Debug\DiningPhilosophers.dll
+D:\temp\ConsoleApplication3\ConsoleApplication3\obj\x86\Debug\DiningPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\DiningPhilosophers\bin\Debug\DiningPhilosophers.dll.config
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\DiningPhilosophers\bin\Debug\DiningPhilosophers.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\DiningPhilosophers\bin\Debug\DiningPhilosophers.pdb
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\DiningPhilosophers\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\DiningPhilosophers\obj\x86\Debug\DiningPhilosophers.dll
+D:\TrainingMaterials\trunk\ENET4\Labs\Thread Safety\Before\DiningPhilosophers\obj\x86\Debug\DiningPhilosophers.pdb

@@ -9,6 +9,12 @@ namespace DynamicParsing
     {
         static void Main(string[] args)
         {
+            dynamic parser = new DynamicXmlParser(@"..\..\order.xml");
+            Console.WriteLine(parser["orderId"]);
+            Console.WriteLine(parser.customer.name);
+            Console.WriteLine(parser.orderItem.product);
+            Console.WriteLine(parser.orderItem.supplier);
+            Console.WriteLine(parser.wtf.doesntexist);
         }
     }
 }

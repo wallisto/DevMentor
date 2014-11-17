@@ -1,0 +1,16 @@
+﻿<Window x:Class="XamlLab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Xaml Lab" Height="350" Width="525" SizeToContent="WidthAndHeight" Background="DodgerBlue">
+    <Grid>
+        <TextBlock FontSize="36.25pt" Foreground="Black" FontFamily="Wide Latin">Hello World</TextBlock>
+        <TextBlock FontSize="36pt" FontFamily="Wide Latin" ><TextBlock.Foreground> <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Offset="0" Color="Red"/>
+            <GradientStop Offset="1" Color="Yellow"/>
+            </LinearGradientBrush></TextBlock.Foreground>
+            Hello World
+        </TextBlock>
+        
+       
+    </Grid>
+</Window>

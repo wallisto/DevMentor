@@ -1,0 +1,16 @@
+﻿<Window x:Class="XamlLab.XamlLab2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="XamlLab2" Height="300" Width="300">
+    <Canvas>
+        <Rectangle Canvas.Left="100" Width="150" Height="150" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="DarkOrange" StrokeThickness="5">
+        <Rectangle.Fill>
+            <LinearGradientBrush>
+                <GradientStop Offset="0" Color="Orange" />
+                <GradientStop Offset="1" Color="Blue" />
+            </LinearGradientBrush>
+        </Rectangle.Fill>
+            <Canvas.Top>80</Canvas.Top>
+        </Rectangle>
+    </Canvas>
+</Window>

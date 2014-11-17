@@ -1,0 +1,17 @@
+﻿<Window x:Class="XamlLab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:XamlLab2="clr-namespace:XamlLab2"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button>
+            <XamlLab2:Person Name="Tom" Age="31" />
+        </Button>
+        <Rectangle MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" Name="myRectangle"
+            Width="150" Height="150" Fill=" Orange" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="5">
+        </Rectangle>
+        <Button Click="Button_Click" 
+            Width="60" Height="20" Foreground="Red" BorderThickness="2" Background="Black" Content="Change Border" FontSize="8">            
+        </Button>
+    </StackPanel>
+</Window>

@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Collections", "DM.Collections\DM.Collections.csproj", "{C8C3747B-D667-41E9-98D3-C4FE71358267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Collections.Test", "DM.Collections.Test\DM.Collections.Test.csproj", "{405B3E6A-B4A8-4D60-8F20-45E3C1AF615D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,10 @@ Global
 		{C8C3747B-D667-41E9-98D3-C4FE71358267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8C3747B-D667-41E9-98D3-C4FE71358267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8C3747B-D667-41E9-98D3-C4FE71358267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{405B3E6A-B4A8-4D60-8F20-45E3C1AF615D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{405B3E6A-B4A8-4D60-8F20-45E3C1AF615D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{405B3E6A-B4A8-4D60-8F20-45E3C1AF615D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{405B3E6A-B4A8-4D60-8F20-45E3C1AF615D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

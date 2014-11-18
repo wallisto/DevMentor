@@ -1,0 +1,21 @@
+﻿<Window x:Class="XamlLab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:XamlLab2="clr-namespace:XamlLab2"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock Text="SCORE" FontSize="10" Foreground="Red" FontStyle="Oblique">
+               <TextBox x:Name="ScoreBox" Text="{Binding _TotalScore}"/>
+        </TextBlock>
+        <Canvas Background ="Transparent" Height="350" Width="525" MouseLeftButtonDown="MissedRectangle">
+        
+        <Rectangle MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" Name="goodRectangle"
+            Width="150" Height="150" Fill=" Green" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="5">
+        </Rectangle>
+        <Rectangle MouseLeftButtonDown="BadRectangle_MouseLeftButtonDown" Name="badRectangle"
+            Width="150" Height="150" Fill=" Red" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="5">
+        </Rectangle>
+            
+    </Canvas>
+    </StackPanel>
+</Window>

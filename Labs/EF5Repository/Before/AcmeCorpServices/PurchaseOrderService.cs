@@ -9,26 +9,27 @@ namespace AcmeCorpServices
 {
     public class PurchaseOrderService : AcmeCorpServices.IPurchaseOrderService
     {
-        public PurchaseOrderService()
+        IUnitOfWorkFactory _uowFactory;
+        public PurchaseOrderService(IUnitOfWorkFactory uowFactory)
         {
-
+            this._uowFactory = uowFactory;
         }
 
         public List<PurchaseOrder> GetAllOpenPurchaseOrders()
         {
-            using (AcmeCorpContainer ctx = new AcmeCorpContainer())
+            using (IUnitOfWork uw = _uowFactory.Create())
             {
-                
-                return (from order in ctx.PurchaseOrders.Include("LineItems").Include("Supplier")
+
+                return (from order in uw.PurchaseOrders.Entities
                         select order).ToList();
             }
         }
 
         public PurchaseOrder GetPurchaseOrder(int purchaseOrderId )
         {
-            using (AcmeCorpContainer ctx = new AcmeCorpContainer())
+            using (IUnitOfWork uw = _uowFactory.Create())
             {
-                return (from order in ctx.PurchaseOrders.Include("LineItems").Include("Supplier")
+                return (from order in uw.PurchaseOrders.Entities
                         where order.Id == purchaseOrderId
                         select order).Single();
             }
@@ -37,13 +38,13 @@ namespace AcmeCorpServices
 
         public void AddToPurchaseOrder(int purchaseOrderId, string item, int quantity, decimal price)
         {
-            using (AcmeCorpContainer ctx = new AcmeCorpContainer())
+            using (IUnitOfWork uw = _uowFactory.Create())
             {
-                PurchaseOrder order = ctx.PurchaseOrders.Where(o => o.Id == purchaseOrderId).Single();
+                PurchaseOrder order = uw.PurchaseOrders.Entities.Where(o => o.Id == purchaseOrderId).Single();
 
                 order.AddLineItem(new PurchaseOrderLineItem() { Description = item, Quantity = quantity, Price = price, Position = order.Items.Count() });
-                
-                ctx.SaveChanges();
+
+                uw.Commit();
             }
         }
 

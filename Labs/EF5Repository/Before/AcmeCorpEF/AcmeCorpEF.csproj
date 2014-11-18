@@ -52,6 +52,9 @@
       <DependentUpon>acmeCorp.edmx</DependentUpon>
     </Compile>
     <Compile Include="AcmeCorpContainer.cs" />
+    <Compile Include="EFPurchaseOrderRepository.cs" />
+    <Compile Include="EFUnitOfWork.cs" />
+    <Compile Include="EFUnitOfWorkFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

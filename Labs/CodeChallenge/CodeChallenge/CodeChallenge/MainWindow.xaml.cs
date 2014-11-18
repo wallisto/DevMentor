@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,15 +23,15 @@ namespace XamlLab2
     {
 
         private TimeSpan gameLength;
-        private DateTime gameStart;
+        private bool gameInProgress;
         private DateTime gameEnd;
-
+        private TextWriter writer;
 
         private int _TotalScore = 10;
 
         public string TotalScore
         {
-            get { return _TotalScore.ToString(); }
+            get { return Convert.ToString(_TotalScore); }
         }
         
 
@@ -39,11 +40,18 @@ namespace XamlLab2
         {
             InitializeComponent();
 
+            if (!File.Exists("..\\..\\HighScores.txt"))
+            {
+                writer = File.CreateText("..\\..\\HighScores.txt");
+                writer.Close();
+            }
+                        
             DataContext = new User
             {
                 Name = "Player1",
-                Score = TotalScore
+                Score = Convert.ToInt32(TotalScore)
             };
+            
             
 
         }
@@ -53,13 +61,16 @@ namespace XamlLab2
         {
             //Color c = RandomColor();
             //goodRectangle.Fill = new SolidColorBrush(c);
-            if (DateTime.Now < gameEnd)
+            if (gameInProgress)
             {
-                UpdateScore(+1);
-            }
-            else
-            {
-                throw new Exception();
+                if (DateTime.Now < gameEnd)
+                {
+                    UpdateScore(+1);
+                }
+                else
+                {
+                    EndGame();
+                }
             }
         }
 
@@ -67,45 +78,51 @@ namespace XamlLab2
         {
             //Color c = RandomColor();
             //goodRectangle.Fill = new SolidColorBrush(c);
-            if (DateTime.Now < gameEnd)
+            if (gameInProgress)
             {
-                UpdateScore(-1);
-            }
-            else
-            {
-                throw new Exception();
+                if (DateTime.Now < gameEnd)
+                {
+                    UpdateScore(-1);
+                }
+                else
+                {
+                    EndGame();
+                }
             }
         }
     
         private void MissedRectangle(object sender, MouseButtonEventArgs e)
         {
-            if (DateTime.Now < gameEnd)
+            if (gameInProgress)
             {
-                ChooseWhichRectangleToShow();
-                int randomX = r.Next(375);
-                int randomY = r.Next(200);
-                Canvas.SetLeft(badRectangle, randomX);
-                Canvas.SetTop(badRectangle, randomY);
-                Canvas.SetLeft(goodRectangle, randomX);
-                Canvas.SetTop(goodRectangle, randomY);
-                int randomSize = r.Next(10, 30);
-                goodRectangle.Height = randomSize;
-                goodRectangle.Width = randomSize;
-                badRectangle.Height = randomSize;
-                badRectangle.Width = randomSize;
-            }
-            else
-            {
-                throw new Exception();
+                if (DateTime.Now < gameEnd)
+                {
+                    ChooseWhichRectangleToShow();
+                    int randomX = r.Next(375);
+                    int randomY = r.Next(200);
+                    Canvas.SetLeft(badRectangle, randomX);
+                    Canvas.SetTop(badRectangle, randomY);
+                    Canvas.SetLeft(goodRectangle, randomX);
+                    Canvas.SetTop(goodRectangle, randomY);
+                    int randomSize = r.Next(10, 30);
+                    goodRectangle.Height = randomSize;
+                    goodRectangle.Width = randomSize;
+                    badRectangle.Height = randomSize;
+                    badRectangle.Width = randomSize;
+                }
+                else
+                {
+                    EndGame();
+                }
             }
         }
 
 
         private void GameStarts(object sender, RoutedEventArgs e)
         {
-            gameLength = new TimeSpan(100000000);
-            gameStart = DateTime.Now;
-            gameEnd = gameStart + gameLength;
+            gameLength = new TimeSpan(20000000);
+            gameInProgress = true;
+            gameEnd = DateTime.Now + gameLength;
         }
 
         private Color RandomColor()
@@ -145,6 +162,38 @@ namespace XamlLab2
             }
         }
 
+        private void EndGame()
+        {
+            gameInProgress = false;
+            File.AppendAllText(@"..\..\HighScores.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
+
+            var top10players = Top10HighScores().Take<User>(10);
+        }
+
+        private List<User> Top10HighScores()
+        {
+            List<User> top10 = new List<User>();
+
+            string line;
+            using (StreamReader reader = new StreamReader("..\\..\\HighScores.txt"))
+            {
+
+                while ((line = reader.ReadLine()) != null)
+                {
+                    top10.Add(new User
+                    {
+                        Name = line.Split('\t').First(),
+                        Score = Convert.ToInt32(line.Split('\t').Last())
+                    }
+                        );
+                }
+
+            }
+
+            List<User> orderedPlayers = top10.OrderByDescending(u => u.Score).ToList<User>();
+            
+            return orderedPlayers;
+        }
        
 
     }
@@ -152,6 +201,6 @@ namespace XamlLab2
     public class User
     {
         public string Name { get; set; }
-        public string Score { get; set; }
+        public int Score { get; set; }
     }
 }

@@ -26,6 +26,8 @@ namespace XamlLab2
         private bool gameInProgress;
         private DateTime gameEnd;
         private TextWriter writer;
+        private int numberOfTimesHitBadRectangle;
+        private int numberOfTimesMissedRectangle;
 
         private int _TotalScore = 10;
 
@@ -66,6 +68,9 @@ namespace XamlLab2
                 if (DateTime.Now < gameEnd)
                 {
                     UpdateScore(+1);
+                    numberOfTimesMissedRectangle = 0;
+
+                    //Add sound
                 }
                 else
                 {
@@ -83,6 +88,15 @@ namespace XamlLab2
                 if (DateTime.Now < gameEnd)
                 {
                     UpdateScore(-1);
+                    numberOfTimesHitBadRectangle++;
+                    numberOfTimesMissedRectangle = 0;
+
+                    //Add sound
+
+                    if (numberOfTimesHitBadRectangle > 2)
+                    {
+                        EndGameWithAdmonishment();
+                    }
                 }
                 else
                 {
@@ -109,6 +123,15 @@ namespace XamlLab2
                     goodRectangle.Width = randomSize;
                     badRectangle.Height = randomSize;
                     badRectangle.Width = randomSize;
+
+                    numberOfTimesMissedRectangle++;
+
+                    //Add sound
+
+                    if (numberOfTimesMissedRectangle > 2)
+                    {
+                        EndGameMissedRectangle();
+                    }
                 }
                 else
                 {
@@ -117,12 +140,14 @@ namespace XamlLab2
             }
         }
 
-
+       
         private void GameStarts(object sender, RoutedEventArgs e)
         {
             gameLength = new TimeSpan(20000000);
             gameInProgress = true;
             gameEnd = DateTime.Now + gameLength;
+            numberOfTimesHitBadRectangle = 0;
+            numberOfTimesMissedRectangle = 0;
         }
 
         private Color RandomColor()
@@ -160,6 +185,20 @@ namespace XamlLab2
                 badRectangle.Visibility = System.Windows.Visibility.Collapsed;
                 goodRectangle.Visibility = System.Windows.Visibility.Visible;
             }
+        }
+
+        private void EndGameMissedRectangle()
+        {
+            gameInProgress = false;
+
+            // Window to tell kept missing all rectangle 3 times in a row.
+        }
+
+        private void EndGameWithAdmonishment()
+        {
+            gameInProgress = false;
+
+            // Window to tell hit the wrong one too many times.
         }
 
         private void EndGame()

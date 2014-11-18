@@ -20,7 +20,14 @@ namespace XamlLab2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int _TotalScore { get; set; }
+        private int _TotalScore;
+
+        public string TotalScore
+        {
+            get { return _TotalScore.ToString(); }
+        }
+        
+
 
         public MainWindow()
         {
@@ -34,7 +41,7 @@ namespace XamlLab2
         {
             //Color c = RandomColor();
             //goodRectangle.Fill = new SolidColorBrush(c);
-            TotalScore(+1);
+            UpdateScore(+1);
 
         }
 
@@ -42,7 +49,7 @@ namespace XamlLab2
         {
             //Color c = RandomColor();
             //goodRectangle.Fill = new SolidColorBrush(c);
-            TotalScore(-1);
+            UpdateScore(-1);
 
         }
     
@@ -70,7 +77,7 @@ namespace XamlLab2
             goodRectangle.Stroke = new SolidColorBrush(c);
         }
 
-        private void TotalScore(int increase)
+        private void UpdateScore(int increase)
         {
             _TotalScore += increase;
         }

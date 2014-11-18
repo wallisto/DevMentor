@@ -5,7 +5,7 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         <TextBlock Text="SCORE" FontSize="10" Foreground="Red" FontStyle="Oblique">
-               <TextBox x:Name="ScoreBox" Text="{Binding _TotalScore}"/>
+               <TextBox x:Name="ScoreBox" Text="{Binding TotalScore}"/>
         </TextBlock>
         <Canvas Background ="Transparent" Height="350" Width="525" MouseLeftButtonDown="MissedRectangle">
         

@@ -20,7 +20,13 @@ namespace XamlLab2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int _TotalScore;
+
+        private TimeSpan gameLength;
+        private DateTime gameStart;
+        private DateTime gameEnd;
+
+
+        private int _TotalScore = 10;
 
         public string TotalScore
         {
@@ -33,6 +39,12 @@ namespace XamlLab2
         {
             InitializeComponent();
 
+            DataContext = new User
+            {
+                Name = "Player1",
+                Score = TotalScore
+            };
+            
 
         }
 
@@ -41,26 +53,61 @@ namespace XamlLab2
         {
             //Color c = RandomColor();
             //goodRectangle.Fill = new SolidColorBrush(c);
-            UpdateScore(+1);
-
+            if (DateTime.Now < gameEnd)
+            {
+                UpdateScore(+1);
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
 
         private void BadRectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //Color c = RandomColor();
             //goodRectangle.Fill = new SolidColorBrush(c);
-            UpdateScore(-1);
-
+            if (DateTime.Now < gameEnd)
+            {
+                UpdateScore(-1);
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
     
         private void MissedRectangle(object sender, MouseButtonEventArgs e)
         {
-            ChooseWhichRectangleToShow();
-            Canvas.SetLeft(badRectangle, r.Next(375));
-            Canvas.SetTop(badRectangle, r.Next(200));
-            Canvas.SetLeft(goodRectangle, r.Next(375));
-            Canvas.SetTop(goodRectangle, r.Next(200));
+            if (DateTime.Now < gameEnd)
+            {
+                ChooseWhichRectangleToShow();
+                int randomX = r.Next(375);
+                int randomY = r.Next(200);
+                Canvas.SetLeft(badRectangle, randomX);
+                Canvas.SetTop(badRectangle, randomY);
+                Canvas.SetLeft(goodRectangle, randomX);
+                Canvas.SetTop(goodRectangle, randomY);
+                int randomSize = r.Next(10, 30);
+                goodRectangle.Height = randomSize;
+                goodRectangle.Width = randomSize;
+                badRectangle.Height = randomSize;
+                badRectangle.Width = randomSize;
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
+
+
+        private void GameStarts(object sender, RoutedEventArgs e)
+        {
+            gameLength = new TimeSpan(100000000);
+            gameStart = DateTime.Now;
+            gameEnd = gameStart + gameLength;
+        }
+
         private Color RandomColor()
         {
             Color c = new Color();
@@ -98,5 +145,13 @@ namespace XamlLab2
             }
         }
 
+       
+
+    }
+
+    public class User
+    {
+        public string Name { get; set; }
+        public string Score { get; set; }
     }
 }

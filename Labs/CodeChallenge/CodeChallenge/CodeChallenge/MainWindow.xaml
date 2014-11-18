@@ -4,16 +4,22 @@
         xmlns:XamlLab2="clr-namespace:XamlLab2"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <TextBlock Text="SCORE" FontSize="10" Foreground="Red" FontStyle="Oblique">
-               <TextBox x:Name="ScoreBox" Text="{Binding TotalScore}"/>
+        <StackPanel Orientation="Horizontal">
+        <TextBlock Text="Player Name" FontSize="10" Foreground="Red" FontStyle="Oblique">
+               <TextBox x:Name="PlayerName" Text="{Binding Name}"/>
         </TextBlock>
+        <TextBlock Text="SCORE" FontSize="10" Foreground="Red" FontStyle="Oblique">
+               <TextBox x:Name="ScoreBox" Text="{Binding Score}"/>
+        </TextBlock>
+            <Button Click="GameStarts" Content="Start Game"/>
+        </StackPanel>
         <Canvas Background ="Transparent" Height="350" Width="525" MouseLeftButtonDown="MissedRectangle">
         
         <Rectangle MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" Name="goodRectangle"
-            Width="150" Height="150" Fill=" Green" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="5">
+            Width="150" Height="150" Fill=" Green" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="1">
         </Rectangle>
         <Rectangle MouseLeftButtonDown="BadRectangle_MouseLeftButtonDown" Name="badRectangle"
-            Width="150" Height="150" Fill=" Red" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="5">
+            Width="150" Height="150" Fill=" Red" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="1">
         </Rectangle>
             
     </Canvas>

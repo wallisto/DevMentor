@@ -143,27 +143,11 @@ namespace XamlLab2
        
         private void GameStarts(object sender, RoutedEventArgs e)
         {
-            gameLength = new TimeSpan(20000000);
+            gameLength = new TimeSpan(100000000);
             gameInProgress = true;
             gameEnd = DateTime.Now + gameLength;
             numberOfTimesHitBadRectangle = 0;
             numberOfTimesMissedRectangle = 0;
-        }
-
-        private Color RandomColor()
-        {
-            Color c = new Color();
-            c.A = (byte)r.Next(256);
-            c.R = (byte)r.Next(256);
-            c.G = (byte)r.Next(256);
-            c.B = (byte)r.Next(256);
-            return c;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Color c = RandomColor();
-            goodRectangle.Stroke = new SolidColorBrush(c);
         }
 
         private void UpdateScore(int increase)
@@ -191,6 +175,11 @@ namespace XamlLab2
         {
             gameInProgress = false;
 
+            var win = new ErrorWindow()
+            {
+               
+            };
+            win.Show();
             // Window to tell kept missing all rectangle 3 times in a row.
         }
 
@@ -198,6 +187,8 @@ namespace XamlLab2
         {
             gameInProgress = false;
 
+            var win = new ErrorWindow();
+            win.Show();
             // Window to tell hit the wrong one too many times.
         }
 
@@ -207,6 +198,8 @@ namespace XamlLab2
             File.AppendAllText(@"..\..\HighScores.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
 
             var top10players = Top10HighScores().Take<User>(10);
+            var win = new Window();
+            win.Show();
         }
 
         private List<User> Top10HighScores()

@@ -1,12 +1,12 @@
 ﻿<Window x:Class="XamlLab2.EndGameWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Well Done - You Win!" Height="150" Width="450" Foreground="Red" HorizontalAlignment="Center">
+        Title="Well Done - You Win!" Height="200" Width="450" Foreground="Red" HorizontalAlignment="Center">
     <StackPanel>
         <TextBlock Text="You scored:" FontSize="20" Foreground="Black" FontWeight="Bold" TextAlignment="Center"></TextBlock>
         <TextBlock></TextBlock>
-        <TextBlock FontSize="10" Foreground="Red" FontStyle="Oblique" TextAlignment="Center">
-           <TextBox x:Name="ScoreBox" Text="{Binding MainWindow.User.Score}"/>
+        <TextBlock Width="100" FontSize="50" Foreground="Red" FontWeight="ExtraBold" FontStyle="Oblique" TextAlignment="Center">
+           <TextBox x:Name="ScoreBox" Text="{Binding Score}"/>
         </TextBlock>
         <TextBlock></TextBlock>
         <TextBlock></TextBlock>

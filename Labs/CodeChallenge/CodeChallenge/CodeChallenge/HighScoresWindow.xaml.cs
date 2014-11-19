@@ -37,6 +37,9 @@ namespace XamlLab2
                top10Scores += player.Score.ToString() + '\n';
            }
 
+           top10Names = top10Names.Remove((top10Names.Length - 1));
+           top10Scores = top10Scores.Remove((top10Scores.Length - 1));
+
            top10scores = new HighScores
            {
                Players = top10Names,
@@ -69,6 +72,25 @@ namespace XamlLab2
             List<User> orderedPlayers = top10.OrderByDescending(u => u.Score).ToList<User>();
 
             return orderedPlayers;
+        }
+
+        private void Button_Click_Close(object sender, RoutedEventArgs e)
+        {
+            this.Close();          
+        }
+
+        private void Button_Click_Reset(object sender, RoutedEventArgs e)
+        {
+            //Need a confirmation request to reset highscores
+            if (true)
+            {
+                ClearHighScores();
+            }
+        }
+
+        private void ClearHighScores()
+        {
+            File.CreateText("..\\..\\HighScores.txt");
         }
     }
 

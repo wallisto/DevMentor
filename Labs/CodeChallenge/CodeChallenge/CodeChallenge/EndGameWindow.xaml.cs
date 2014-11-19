@@ -21,12 +21,15 @@ namespace XamlLab2
     public partial class EndGameWindow : Window
     {
 
+        User player;
         
-        public EndGameWindow()
+        public EndGameWindow(int Score)
         {
             InitializeComponent();
 
-            
+            player = new User { Score = Score };
+
+            DataContext = player;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

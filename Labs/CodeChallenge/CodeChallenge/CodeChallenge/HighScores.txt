@@ -33,3 +33,12 @@ Player1	3
 Player1	3
 Player1	3
 Player1	2
+Player1	6
+Player1	7
+Player1	10
+Player1	7
+Player1	8
+Player1	10
+Player1	9
+Player1	7
+Player1	12

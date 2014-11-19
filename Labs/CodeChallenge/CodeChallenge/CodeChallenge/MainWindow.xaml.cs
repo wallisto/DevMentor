@@ -60,9 +60,9 @@ namespace XamlLab2
             //goodRectangle.Fill = new SolidColorBrush(c);
             if (gameInProgress)
             {
+                UpdateScore(+1);
                 if (DateTime.Now < gameEnd)
                 {
-                    UpdateScore(+1);
                     numberOfTimesMissedRectangle = 0;
 
                     //Add sound
@@ -80,9 +80,9 @@ namespace XamlLab2
             //goodRectangle.Fill = new SolidColorBrush(c);
             if (gameInProgress)
             {
+                UpdateScore(-1);
                 if (DateTime.Now < gameEnd)
                 {
-                    UpdateScore(-1);
                     numberOfTimesHitBadRectangle++;
                     numberOfTimesMissedRectangle = 0;
 
@@ -196,7 +196,7 @@ namespace XamlLab2
             File.AppendAllText(@"..\..\HighScores.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
 
             
-            var win = new EndGameWindow();
+            var win = new EndGameWindow(player.Score);
             win.Show();
 
             // Play sound

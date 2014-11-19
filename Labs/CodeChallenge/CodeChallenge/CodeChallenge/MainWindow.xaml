@@ -4,29 +4,71 @@
         xmlns:XamlLab2="clr-namespace:XamlLab2"
         Title="MainWindow" Height="1100" Width="1800">
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Player Name" FontSize="10" Foreground="Red" FontStyle="Oblique">
-               <TextBox x:Name="PlayerName" Text="{Binding Name}"/>
+        <Grid>
+            <TextBlock Width="180" HorizontalAlignment="Left" Text="Player Name" FontSize="15" FontWeight="Bold" Foreground="Red" >
+               <TextBox Width="150" x:Name="PlayerName" Text="{Binding Name}"/>
             </TextBlock>
-            <TextBlock Text="SCORE" FontSize="10" Foreground="Red" FontStyle="Oblique">
-               <TextBox x:Name="ScoreBox" Text="{Binding Score}"/>
+            <Button Width="70" Click="GameStarts" Content="Start Game"/>
+            <TextBlock Width="120" HorizontalAlignment="Right" Text="SCORE" FontSize="15" FontWeight="Bold" Foreground="Red" >
+               <TextBox Width="50" x:Name="ScoreBox" Text="{Binding Score}"/>
             </TextBlock>
-            <Button Click="GameStarts" Content="Start Game"/>
-        </StackPanel>
+        </Grid>
         <Grid Background="Transparent" Height="1000" Width="1800" >
-            <Image Stretch="Fill"  StretchDirection="Both" Source="Images\Michael_Kennedy.jpg"></Image>
+            <Image Stretch="Fill"  StretchDirection="Both" Source="Images\Crowd.jpg"></Image>
             <Canvas Background="Transparent" Height="1000" Width="1800" MouseLeftButtonDown="MissedRectangle">
-                <Grid MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" Name="goodRectangle"
-            Width="150" Height="150" Cursor="Cross">
+                <!--<Grid MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" Name="goodRectangle" 
+            Width="150" Height="150"  Cursor="Cross">
                     <Image Source="Images\Andrew_Clymer.jpg">
                     </Image>
-                </Grid>
+                </Grid>-->
 
-                <Grid MouseLeftButtonDown="BadRectangle_MouseLeftButtonDown" Name="badRectangle"
+                <!--<Grid MouseLeftButtonDown="BadRectangle_MouseLeftButtonDown" Name="badRectangle"
             Width="150" Height="150" Cursor="Cross">
                     <Image Source="Images\Richard_Blewett.jpg">
                     </Image>
-                </Grid>
+                </Grid>-->
+
+                <Ellipse x:Name="badRectangle" Width="150" Height="150" MouseLeftButtonDown="BadRectangle_MouseLeftButtonDown" >
+                    <Ellipse.Fill>
+                        <ImageBrush>
+                        <ImageBrush.ImageSource>
+                                <BitmapImage UriSource="Images\Richard_Blewett.jpg"/>
+                        </ImageBrush.ImageSource>
+                        </ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <Ellipse x:Name="goodRectangle" Width="150" Height="150" MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" >
+                    <Ellipse.Fill>
+                        <ImageBrush>
+                            <ImageBrush.ImageSource>
+                                <BitmapImage UriSource="Images\Andrew_Clymer.jpg"/>
+                            </ImageBrush.ImageSource>
+                        </ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <!--<Rectangle x:Name="rectangle" Width="100" Height="100" Stroke="Red"/>
+                <Ellipse x:Name="ellipse" Width="100" Height="100" Stroke="Red"/>
+                <Path x:Name="flower" Data="M39.719002,49.903999L27.454459,67.570106 6.1730003,
+                            70.669006 18.437453,53.002895z M45.763216,47.663001L54.931002,
+                            67.117103 46.974087,87.096 37.805001,67.643096z M46.844002,
+                            41.306999L68.275991,43.094764 81.599997,59.977001 60.169409,
+                            58.189132z M0,27.119998L21.430977,28.90767 34.755001,
+                            45.788997 13.324224,44.002528z M75.427,16.426999L63.162882,
+                            34.094039 41.882,37.193 54.146118,19.526059z M34.627251,
+                            0L43.794003,19.454595 35.835654,39.434001 26.669002,19.979402z" 
+                      Stretch="Uniform" Width="100" Height="100" Margin="0,0,0,0" 
+                      RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <TransformGroup.Children>
+                                <RotateTransform Angle="0" />
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </TransformGroup.Children>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>-->
             </Canvas>
         </Grid>
     </StackPanel>

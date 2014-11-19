@@ -124,7 +124,7 @@ namespace XamlLab2
 
                     //Add sound
 
-                    if (numberOfTimesMissedRectangle > 2)
+                    if (numberOfTimesMissedRectangle > 3)
                     {
                         EndGameMissedRectangle();
                     }
@@ -139,12 +139,17 @@ namespace XamlLab2
        
         private void GameStarts(object sender, RoutedEventArgs e)
         {
-            gameLength = new TimeSpan(100000000);
-            gameInProgress = true;
-            gameEnd = DateTime.Now + gameLength;
-            numberOfTimesHitBadRectangle = 0;
-            numberOfTimesMissedRectangle = 0;
-            player.Score = 0;
+            MessageBoxResult dialogResult = MessageBox.Show("Have you entered your name?", "Start New Game", MessageBoxButton.YesNo);
+            if (dialogResult == MessageBoxResult.Yes)
+            {
+                gameLength = new TimeSpan(100000000);
+                gameInProgress = true;
+                gameEnd = DateTime.Now + gameLength;
+                numberOfTimesHitBadRectangle = 0;
+                numberOfTimesMissedRectangle = 0;
+                player.Score = 0;
+            }
+                        
         }
 
         private void UpdateScore(int increase)

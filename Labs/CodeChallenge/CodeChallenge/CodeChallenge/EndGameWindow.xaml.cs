@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,27 @@ namespace XamlLab2
     /// </summary>
     public partial class EndGameWindow : Window
     {
+
+        
         public EndGameWindow()
         {
             InitializeComponent();
+
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+
+            
+
+            var win = new HighScoresWindow();
+            win.Show();
         }
+
+        
     }
+
+
 }

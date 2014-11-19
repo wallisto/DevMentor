@@ -6,7 +6,7 @@
         <TextBlock Text="You scored:" FontSize="20" Foreground="Black" FontWeight="Bold" TextAlignment="Center"></TextBlock>
         <TextBlock></TextBlock>
         <TextBlock FontSize="10" Foreground="Red" FontStyle="Oblique" TextAlignment="Center">
-           
+           <TextBox x:Name="ScoreBox" Text="{Binding MainWindow.User.Score}"/>
         </TextBlock>
         <TextBlock></TextBlock>
         <TextBlock></TextBlock>

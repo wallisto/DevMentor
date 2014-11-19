@@ -21,3 +21,15 @@ Player1	10
 Player1	10
 Player1	10
 Player1	7
+Player1	10
+Player1	5
+Player1	7
+Player1	8
+Player1	4
+Player1	1
+Player1	1
+Player1	1
+Player1	3
+Player1	3
+Player1	3
+Player1	2

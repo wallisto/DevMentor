@@ -123,7 +123,7 @@ namespace XamlLab2
 
                     //Add sound
 
-                    if (numberOfTimesMissedRectangle > 2)
+                    if (numberOfTimesMissedRectangle > 3)
                     {
                         EndGameMissedRectangle();
                     }
@@ -143,6 +143,7 @@ namespace XamlLab2
             gameEnd = DateTime.Now + gameLength;
             numberOfTimesHitBadRectangle = 0;
             numberOfTimesMissedRectangle = 0;
+            player.Score = 0;
         }
 
         private void UpdateScore(int increase)
@@ -194,37 +195,14 @@ namespace XamlLab2
             gameInProgress = false;
             File.AppendAllText(@"..\..\HighScores.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
 
-            var top10players = Top10HighScores().Take<User>(10);
-            var win = new Window();
+            
+            var win = new EndGameWindow();
             win.Show();
 
             // Play sound
         }
 
-        private List<User> Top10HighScores()
-        {
-            List<User> top10 = new List<User>();
-
-            string line;
-            using (StreamReader reader = new StreamReader("..\\..\\HighScores.txt"))
-            {
-
-                while ((line = reader.ReadLine()) != null)
-                {
-                    top10.Add(new User
-                    {
-                        Name = line.Split('\t').First(),
-                        Score = Convert.ToInt32(line.Split('\t').Last())
-                    }
-                        );
-                }
-
-            }
-
-            List<User> orderedPlayers = top10.OrderByDescending(u => u.Score).ToList<User>();
-            
-            return orderedPlayers;
-        }
+        
 
 
         List<string> pictures;

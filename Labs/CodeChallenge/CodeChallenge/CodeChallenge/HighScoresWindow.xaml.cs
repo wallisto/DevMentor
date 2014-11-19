@@ -82,7 +82,9 @@ namespace XamlLab2
         private void Button_Click_Reset(object sender, RoutedEventArgs e)
         {
             //Need a confirmation request to reset highscores
-            if (true)
+
+            MessageBoxResult dialogResult = MessageBox.Show("Do you REALLY want to delete the High Scores?", "Delete?", MessageBoxButton.YesNo);
+            if (dialogResult == MessageBoxResult.Yes)
             {
                 ClearHighScores();
             }

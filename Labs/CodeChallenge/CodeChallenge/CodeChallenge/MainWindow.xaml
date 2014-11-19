@@ -15,7 +15,7 @@
         </StackPanel>
         <Grid Background="Transparent" Height="1000" Width="1800" >
             <Image Stretch="Fill"  StretchDirection="Both" Source="Images\Michael_Kennedy.jpg"></Image>
-            <Canvas Height="1000" Width="1800" MouseLeftButtonDown="MissedRectangle">
+            <Canvas Background="Transparent" Height="1000" Width="1800" MouseLeftButtonDown="MissedRectangle">
                 <Grid MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" Name="goodRectangle"
             Width="150" Height="150" Cursor="Cross">
                     <Image Source="Images\Andrew_Clymer.jpg">

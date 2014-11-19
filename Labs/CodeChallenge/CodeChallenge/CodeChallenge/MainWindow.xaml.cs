@@ -108,8 +108,8 @@ namespace XamlLab2
                 if (DateTime.Now < gameEnd)
                 {
                     ChooseWhichRectangleToShow();
-                    int randomX = r.Next(1500);
-                    int randomY = r.Next(1000);
+                    int randomX = r.Next(1700);
+                    int randomY = r.Next(900);
                     Canvas.SetLeft(badRectangle, randomX);
                     Canvas.SetTop(badRectangle, randomY);
                     Canvas.SetLeft(goodRectangle, randomX);
@@ -124,7 +124,7 @@ namespace XamlLab2
 
                     //Add sound
 
-                    if (numberOfTimesMissedRectangle > 3)
+                    if (numberOfTimesMissedRectangle > 2)
                     {
                         EndGameMissedRectangle();
                     }

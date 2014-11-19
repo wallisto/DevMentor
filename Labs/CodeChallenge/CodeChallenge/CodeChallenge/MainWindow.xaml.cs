@@ -172,15 +172,19 @@ namespace XamlLab2
 
             var win = new ErrorWindow()
             {
-               
+               //Change Message in Error box, or new window.
             };
             win.Show();
+
+            // Play sound
             // Window to tell kept missing all rectangle 3 times in a row.
         }
 
         private void EndGameWithAdmonishment()
         {
             gameInProgress = false;
+
+            // Play sound
 
             var win = new ErrorWindow();
             win.Show();
@@ -195,6 +199,8 @@ namespace XamlLab2
             var top10players = Top10HighScores().Take<User>(10);
             var win = new Window();
             win.Show();
+
+            // Play sound
         }
 
         private List<User> Top10HighScores()

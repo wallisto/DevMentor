@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -28,16 +29,8 @@ namespace XamlLab2
         private TextWriter writer;
         private int numberOfTimesHitBadRectangle;
         private int numberOfTimesMissedRectangle;
-
-        private int _TotalScore = 10;
-
-        public string TotalScore
-        {
-            get { return Convert.ToString(_TotalScore); }
-        }
-        
-
-
+        private User player;
+     
         public MainWindow()
         {
             InitializeComponent();
@@ -47,12 +40,14 @@ namespace XamlLab2
                 writer = File.CreateText("..\\..\\HighScores.txt");
                 writer.Close();
             }
-                        
-            DataContext = new User
+            
+            player = new User
             {
                 Name = "Player1",
-                Score = Convert.ToInt32(TotalScore)
+                Score = 0
             };
+
+            DataContext = player;
             
             
 
@@ -152,7 +147,7 @@ namespace XamlLab2
 
         private void UpdateScore(int increase)
         {
-            _TotalScore += increase;
+            player.Score += increase;
         }
 
         private void ChooseWhichRectangleToShow()
@@ -230,9 +225,21 @@ namespace XamlLab2
 
     }
 
-    public class User
+    public class User : INotifyPropertyChanged
     {
+        private int score;
         public string Name { get; set; }
-        public int Score { get; set; }
+        public int Score
+        {
+            get { return score; }
+            set { score = value; PropertyChanged(this, new PropertyChangedEventArgs("Score")); }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate {};
+
+        public void Refresh()
+        {
+            PropertyChanged(this, null);
+        }
     }
 }

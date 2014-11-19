@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -107,13 +108,13 @@ namespace XamlLab2
                 if (DateTime.Now < gameEnd)
                 {
                     ChooseWhichRectangleToShow();
-                    int randomX = r.Next(375);
-                    int randomY = r.Next(200);
+                    int randomX = r.Next(1500);
+                    int randomY = r.Next(1000);
                     Canvas.SetLeft(badRectangle, randomX);
                     Canvas.SetTop(badRectangle, randomY);
                     Canvas.SetLeft(goodRectangle, randomX);
                     Canvas.SetTop(goodRectangle, randomY);
-                    int randomSize = r.Next(10, 30);
+                    int randomSize = r.Next(20, 100);
                     goodRectangle.Height = randomSize;
                     goodRectangle.Width = randomSize;
                     badRectangle.Height = randomSize;
@@ -175,7 +176,9 @@ namespace XamlLab2
            
             win.Show();
 
-            // Play sound
+            Stream str = Properties.Resources.Evil_Laugh;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
             
         }
 
@@ -183,10 +186,12 @@ namespace XamlLab2
         {
             gameInProgress = false;
 
-            // Play sound
-
             var win = new RunOutOfLives();
             win.Show();
+
+            Stream str = Properties.Resources.laugh_x;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
             
         }
 
@@ -199,7 +204,10 @@ namespace XamlLab2
             var win = new EndGameWindow(player.Score);
             win.Show();
 
-            // Play sound
+            Stream str = Properties.Resources.Yahoo;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
+            
         }
 
         

@@ -122,16 +122,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Crowd.jpg" />
     <Content Include="Evil_Laugh.wav" />
-    <Resource Include="Images\Andrew_Clymer.jpg">
+    <None Include="laugh_x.wav" />
+    <EmbeddedResource Include="Images\Andrew_Clymer.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\Michael_Kennedy.jpg">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\Michael_Kennedy.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\Richard_Blewett.jpg">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\Richard_Blewett.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
     <Content Include="Yahoo.wav" />
   </ItemGroup>
   <ItemGroup />

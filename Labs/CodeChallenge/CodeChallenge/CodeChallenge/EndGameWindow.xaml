@@ -5,8 +5,8 @@
     <StackPanel>
         <TextBlock Text="You scored:" FontSize="20" Foreground="Black" FontWeight="Bold" TextAlignment="Center"></TextBlock>
         <TextBlock></TextBlock>
-        <TextBlock Width="100" FontSize="50" Foreground="Red" FontWeight="ExtraBold" FontStyle="Oblique" TextAlignment="Center">
-           <TextBox x:Name="ScoreBox" Text="{Binding Score}"/>
+        <TextBlock Width="200" FontSize="50" Foreground="Red" FontWeight="ExtraBold" FontStyle="Oblique" TextAlignment="Center">
+           <TextBox Width="200" x:Name="ScoreBox" Foreground="Red" Text="{Binding Score}"/>
         </TextBlock>
         <TextBlock></TextBlock>
         <TextBlock></TextBlock>

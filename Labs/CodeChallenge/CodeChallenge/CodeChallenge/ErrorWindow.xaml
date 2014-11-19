@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="You Muppet - You Lose!" Height="150" Width="450" Foreground="Red" HorizontalAlignment="Center">
     <StackPanel>
-        <TextBlock Text="You couldn't hit sand if you fell off a camel!" FontSize="20" Foreground="Red" FontWeight="Bold" TextAlignment="Center"></TextBlock>
+        <TextBlock Name="Text0" Text="You couldn't hit sand if you fell off a camel!" FontSize="20" Foreground="Red" FontWeight="Bold" TextAlignment="Center"></TextBlock>
         <TextBlock></TextBlock>
-        <TextBlock Text="You missed 3 times in a row, Dummy!" FontSize="10" Foreground="Red" FontStyle="Oblique" TextAlignment="Center"></TextBlock>
+        <TextBlock Name="Text1" Text="You missed 3 times in a row, Dummy!" FontSize="10" Foreground="Red" FontStyle="Oblique" TextAlignment="Center"></TextBlock>
         <TextBlock></TextBlock>
         <TextBlock></TextBlock>
         <Button Click="Button_Click"  Content="OK" Width="50"/>

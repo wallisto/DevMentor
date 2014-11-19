@@ -40,11 +40,11 @@ namespace XamlLab2
                 writer = File.CreateText("..\\..\\HighScores.txt");
                 writer.Close();
             }
-            
+
             player = new User
             {
                 Name = "Player1",
-                Score = 0
+                Score = 0,
             };
 
             DataContext = player;
@@ -170,14 +170,12 @@ namespace XamlLab2
         {
             gameInProgress = false;
 
-            var win = new ErrorWindow()
-            {
-               //Change Message in Error box, or new window.
-            };
+            var win = new ErrorWindow();
+           
             win.Show();
 
             // Play sound
-            // Window to tell kept missing all rectangle 3 times in a row.
+            
         }
 
         private void EndGameWithAdmonishment()
@@ -186,9 +184,9 @@ namespace XamlLab2
 
             // Play sound
 
-            var win = new ErrorWindow();
+            var win = new RunOutOfLives();
             win.Show();
-            // Window to tell hit the wrong one too many times.
+            
         }
 
         private void EndGame()
@@ -227,7 +225,26 @@ namespace XamlLab2
             
             return orderedPlayers;
         }
-       
+
+
+        List<string> pictures;
+
+        public void PictureService()
+        {
+            DirectoryInfo dir = new DirectoryInfo(@"..\..\images");
+            pictures.AddRange(dir.GetFiles().Select(fi => fi.FullName));
+        }
+
+        private Stream GetPhotosForRectangle()
+        {
+            string filename = pictures[r.Next(pictures.Count)];
+
+            Console.WriteLine("Picture requested - returning {0}", filename);
+
+            FileStream fs = File.OpenRead(filename);
+
+            return fs;
+        }
 
     }
 
@@ -247,5 +264,7 @@ namespace XamlLab2
         {
             PropertyChanged(this, null);
         }
+
+       
     }
 }

@@ -15,12 +15,17 @@
         </StackPanel>
         <Canvas Background ="Transparent" Height="350" Width="525" MouseLeftButtonDown="MissedRectangle">
         
-        <Rectangle MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" Name="goodRectangle"
-            Width="150" Height="150" Fill=" Green" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="1">
-        </Rectangle>
-        <Rectangle MouseLeftButtonDown="BadRectangle_MouseLeftButtonDown" Name="badRectangle"
-            Width="150" Height="150" Fill=" Red" RadiusX="10" RadiusY="10" Cursor="Cross" Stroke="Black" StrokeThickness="1">
-        </Rectangle>
+        <Grid MouseLeftButtonDown="GoodRectangle_MouseLeftButtonDown" Name="goodRectangle"
+            Width="150" Height="150" Cursor="Cross">
+                <Image Source="Images\Andrew_Clymer.jpg">
+                </Image>
+        </Grid>
+            
+        <Grid MouseLeftButtonDown="BadRectangle_MouseLeftButtonDown" Name="badRectangle"
+            Width="150" Height="150" Cursor="Cross">
+                <Image Source="Images\Richard_Blewett.jpg">
+                </Image>
+            </Grid>
             
     </Canvas>
     </StackPanel>

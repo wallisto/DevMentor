@@ -132,9 +132,9 @@ namespace XamlLab2
             Easy = true;
 
             BitmapImage img = new BitmapImage();
-            img.BeginInit();
-            img.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Richard_Blewett.jpg");
-            img.EndInit();
+            //img.BeginInit();
+            //img.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Richard_Blewett.jpg");
+            //img.EndInit();
             Backdrop.Source = img;
 
             HardButton.IsEnabled = true;

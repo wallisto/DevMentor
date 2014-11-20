@@ -4,7 +4,7 @@
         Title="Who's the Goodie and Who's the Baddie?" Height="400" Width="320">
     <StackPanel>
         <TextBlock>
-            <TextBox BorderThickness="0" FontSize="15">Choose which instructor is the Goodie...</TextBox>
+            <TextBox BorderThickness="0" FontSize="15">Choose which instructor is the Good Instructor...</TextBox>
         </TextBlock>
         <StackPanel Orientation="Horizontal" Height="100">
             <Ellipse x:Name="Andrew" Width="100" Height="100" MouseLeftButtonDown="Andrew_MouseLeftButtonDown" >
@@ -40,7 +40,7 @@
             <StackPanel></StackPanel>
         </StackPanel>
         <TextBlock>
-            <TextBox BorderThickness="0" FontSize="15">Choose which instructor is the Baddie...</TextBox>
+            <TextBox BorderThickness="0" FontSize="15">Choose which instructor is the Bad Instructor...</TextBox>
         </TextBlock>
         <StackPanel Orientation="Horizontal">
             <Ellipse x:Name="Andrew_Bad" Width="100" Height="100" MouseLeftButtonDown="Andrew_Bad_MouseLeftButtonDown" >
@@ -81,7 +81,7 @@
         <TextBlock HorizontalAlignment="Center">
             <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">Lose 1 point for every Bad instructor you click on.</TextBox></TextBlock>
         <TextBlock HorizontalAlignment="Center">
-            <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">   You can only hit 3 Bad Instructors before you lose.</TextBox>
+            <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">You can only hit 3 Bad Instructors before you lose.</TextBox>
              </TextBlock>
         <TextBlock HorizontalAlignment="Center">
             <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">Completely miss 3 Times in a row and you lose.</TextBox>

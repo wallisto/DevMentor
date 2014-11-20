@@ -23,11 +23,15 @@ namespace XamlLab2
     public partial class HighScoresWindow : Window
     {
         HighScores top10scores;
-        public HighScoresWindow()
+        bool? Easy;
+        public HighScoresWindow(bool? easy)
         {
+
            InitializeComponent();
 
-           var top10players = Top10HighScores().Take<User>(10);
+           Easy = easy;
+
+           var top10players = Top10HighScores(Easy).Take<User>(10);
 
             string top10Names = null;
            string top10Scores = null;
@@ -50,11 +54,22 @@ namespace XamlLab2
            DataContext = top10scores;
         }
 
-        public List<User> Top10HighScores()
+        public List<User> Top10HighScores(bool? easy)
         {
             List<User> top10 = new List<User>();
-
-            var file = File.ReadAllLines("HighScores.txt");
+            string[] file;
+            if (easy == null)
+            {
+               file = File.ReadAllLines("HighScores_Easy.txt");
+            }
+            else if(easy.Value)
+            {
+               file = File.ReadAllLines("HighScores_Medium.txt");
+            }
+            else
+            {
+                file = File.ReadAllLines("HighScores_Hard.txt");
+            }
                 foreach(var line in file)
                 {
                     top10.Add(new User
@@ -89,8 +104,18 @@ namespace XamlLab2
 
         private void ClearHighScores()
         {
-            File.CreateText("HighScores.txt");
-            
+            if (Easy == null)
+            {
+                File.CreateText("HighScores_Easy.txt");
+            }
+            else if (Easy.Value)
+            {
+                File.CreateText("HighScores_Medium.txt");
+            }
+            else
+            {
+                File.CreateText("HighScores_Hard.txt");
+            }
         }
     }
 

@@ -54,12 +54,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChooseGoodBad.xaml.cs">
+      <DependentUpon>ChooseGoodBad.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HighScoresWindow.xaml.cs">
       <DependentUpon>HighScoresWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="RunOutOfLives.xaml.cs">
       <DependentUpon>RunOutOfLives.xaml</DependentUpon>
     </Compile>
+    <Page Include="ChooseGoodBad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EndGameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

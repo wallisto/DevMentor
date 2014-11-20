@@ -22,12 +22,14 @@ namespace XamlLab2
     {
 
         User player;
+        bool? Easy;
         
-        public EndGameWindow(int Score)
+        public EndGameWindow(int Score, bool? easy)
         {
             InitializeComponent();
 
             player = new User { Score = Score };
+            Easy = easy;
 
             DataContext = player;
         }
@@ -38,7 +40,7 @@ namespace XamlLab2
 
             
 
-            var win = new HighScoresWindow();
+            var win = new HighScoresWindow(Easy);
             win.Show();
         }
 

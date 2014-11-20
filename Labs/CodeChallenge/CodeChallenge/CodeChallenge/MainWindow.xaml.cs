@@ -30,8 +30,10 @@ namespace XamlLab2
         private TextWriter writer;
         private int numberOfTimesHitBadRectangle;
         private int numberOfTimesMissedRectangle;
-        private User player;
-     
+        public User player;
+
+        bool? Easy;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -47,8 +49,8 @@ namespace XamlLab2
                 Name = "Player1",
                 Score = 0,
                 // Can't pass in the image, not sure how to do it with URI?
-                GoodImage = new Uri(null),
-                BadImage = new Uri(null)
+               
+               // BadImage = new Uri("asf")
             };
 
             DataContext = player;
@@ -61,8 +63,10 @@ namespace XamlLab2
         private void GoodRectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
-            var uri = goodImage.UriSource;
-            goodImage.UriSource = new Uri("Images\\Michael_Kennedy.jpg");
+            //var uri = goodImage.UriSource;
+            //goodImage.UriSource = new Uri("Images\\Michael_Kennedy.jpg");
+
+            goodImage.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Michael_Kennedy.jpg");
 
             if (gameInProgress)
             {
@@ -105,6 +109,62 @@ namespace XamlLab2
                 }
             }
         }
+
+        private void EasyCommand(object sender, RoutedEventArgs e)
+        {
+            //Set background canvas
+            Easy = null;
+
+            BitmapImage img = new BitmapImage();
+            //img.BeginInit();
+            //img.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Michael_Kennedy.jpg");
+            //img.EndInit();
+            Backdrop.Source = img;
+
+            HardButton.IsEnabled = true;
+            EasyButton.IsEnabled = false;
+            MediumButton.IsEnabled = true;
+
+            goodRectangle.Height = 150;
+            goodRectangle.Width = 150;
+            badRectangle.Height = 150;
+            badRectangle.Width = 150;
+        }
+
+        private void MediumCommand(object sender, RoutedEventArgs e)
+        {
+            //Set background canvas
+            Easy = true;
+
+            BitmapImage img = new BitmapImage();
+            img.BeginInit();
+            img.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Richard_Blewett.jpg");
+            img.EndInit();
+            Backdrop.Source = img;
+
+            HardButton.IsEnabled = true;
+            EasyButton.IsEnabled = true;
+            MediumButton.IsEnabled = false;
+        }
+
+        private void Hard(object sender, RoutedEventArgs e)
+        {
+            //Set background canvas
+            Easy = false;
+
+            BitmapImage img = new BitmapImage();
+            img.BeginInit();
+            img.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Crowd.jpg");
+            img.EndInit();
+            Backdrop.Source = img;
+
+            HardButton.IsEnabled = false;
+            EasyButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+        }
+
+
+
     
         private void MissedRectangle(object sender, MouseButtonEventArgs e)
         {
@@ -113,18 +173,20 @@ namespace XamlLab2
                 if (DateTime.Now < gameEnd)
                 {
                     ChooseWhichRectangleToShow();
-                    int randomX = r.Next(1700);
-                    int randomY = r.Next(900);
+                    int randomX = r.Next(1400);
+                    int randomY = r.Next(600);
                     Canvas.SetLeft(badRectangle, randomX);
                     Canvas.SetTop(badRectangle, randomY);
                     Canvas.SetLeft(goodRectangle, randomX);
                     Canvas.SetTop(goodRectangle, randomY);
-                    int randomSize = r.Next(20, 100);
-                    goodRectangle.Height = randomSize;
-                    goodRectangle.Width = randomSize;
-                    badRectangle.Height = randomSize;
-                    badRectangle.Width = randomSize;
-
+                    if (Easy !=null)
+                    {
+                        int randomSize = r.Next(20, 100);
+                        goodRectangle.Height = randomSize;
+                        goodRectangle.Width = randomSize;
+                        badRectangle.Height = randomSize;
+                        badRectangle.Width = randomSize;
+                    }
                     numberOfTimesMissedRectangle++;
 
                     //Add sound
@@ -147,14 +209,24 @@ namespace XamlLab2
             MessageBoxResult dialogResult = MessageBox.Show("Have you entered your name?", "Start New Game", MessageBoxButton.YesNo);
             if (dialogResult == MessageBoxResult.Yes)
             {
-                gameLength = new TimeSpan(100000000);
-                gameInProgress = true;
-                gameEnd = DateTime.Now + gameLength;
-                numberOfTimesHitBadRectangle = 0;
-                numberOfTimesMissedRectangle = 0;
-                player.Score = 0;
+                var win = new ChooseGoodBad(player, this);
+                win.Show();
+                
             }
                         
+        }
+
+        public void ActuallyStartGame()
+        {
+            goodRectangle.Visibility = Visibility.Visible;
+            badRectangle.Visibility = Visibility.Visible;
+
+            gameLength = new TimeSpan(100000000);
+            gameInProgress = true;
+            gameEnd = DateTime.Now + gameLength;
+            numberOfTimesHitBadRectangle = 0;
+            numberOfTimesMissedRectangle = 0;
+            player.Score = 0;
         }
 
         private void UpdateScore(int increase)
@@ -208,10 +280,21 @@ namespace XamlLab2
         private void EndGame()
         {
             gameInProgress = false;
-            File.AppendAllText(@"HighScores.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
-
+            if (Easy == null)
+            {
+                File.AppendAllText(@"HighScores_Easy.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
+           
+            }
+            else if(Easy.Value)
+            {
+                File.AppendAllText(@"HighScores_Medium.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
+            }
+            else
+            {
+                File.AppendAllText(@"HighScores_Hard.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
+            }
             
-            var win = new EndGameWindow(player.Score);
+            var win = new EndGameWindow(player.Score, Easy);
             win.Show();
 
             Stream str = Properties.Resources.Yahoo;

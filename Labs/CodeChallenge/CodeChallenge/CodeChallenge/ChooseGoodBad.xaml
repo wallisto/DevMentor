@@ -1,0 +1,92 @@
+﻿<Window x:Class="XamlLab2.ChooseGoodBad"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Who's the Goodie and Who's the Baddie?" Height="400" Width="320">
+    <StackPanel>
+        <TextBlock>
+            <TextBox BorderThickness="0" FontSize="15">Choose which instructor is the Goodie...</TextBox>
+        </TextBlock>
+        <StackPanel Orientation="Horizontal" Height="100">
+            <Ellipse x:Name="Andrew" Width="100" Height="100" MouseLeftButtonDown="Andrew_MouseLeftButtonDown" >
+                <Ellipse.Fill>
+                    <ImageBrush>
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="Images\Andrew_Clymer.jpg"/>
+                            <!--<BitmapImage x:Name="goodImage" UriSource="{Binding GoodImage}"/>-->
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="Rich" Width="100" Height="100" MouseLeftButtonDown="Rich_MouseLeftButtonDown" >
+                <Ellipse.Fill>
+                    <ImageBrush>
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="Images\Richard_Blewett.jpg"/>
+                            <!--<BitmapImage x:Name="goodImage" UriSource="{Binding GoodImage}"/>-->
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="Mike" Width="100" Height="100" MouseLeftButtonDown="Mike_MouseLeftButtonDown" >
+                <Ellipse.Fill>
+                    <ImageBrush>
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="Images\Michael_Kennedy.jpg"/>
+                            <!--<BitmapImage x:Name="goodImage" UriSource="{Binding GoodImage}"/>-->
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <StackPanel></StackPanel>
+        </StackPanel>
+        <TextBlock>
+            <TextBox BorderThickness="0" FontSize="15">Choose which instructor is the Baddie...</TextBox>
+        </TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <Ellipse x:Name="Andrew_Bad" Width="100" Height="100" MouseLeftButtonDown="Andrew_Bad_MouseLeftButtonDown" >
+                <Ellipse.Fill>
+                    <ImageBrush>
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="Images\Andrew_Clymer.jpg"/>
+                            <!--<BitmapImage x:Name="goodImage" UriSource="{Binding GoodImage}"/>-->
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="Rich_Bad" Width="100" Height="100" MouseLeftButtonDown="Rich_Bad_MouseLeftButtonDown" >
+                <Ellipse.Fill>
+                    <ImageBrush>
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="Images\Richard_Blewett.jpg"/>
+                            <!--<BitmapImage x:Name="goodImage" UriSource="{Binding GoodImage}"/>-->
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="Mike_Bad" Width="100" Height="100" MouseLeftButtonDown="Mike_Bad_MouseLeftButtonDown" >
+                <Ellipse.Fill>
+                    <ImageBrush>
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="Images\Michael_Kennedy.jpg"/>
+                            <!--<BitmapImage x:Name="goodImage" UriSource="{Binding GoodImage}"/>-->
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <StackPanel></StackPanel>
+        </StackPanel>
+        <TextBlock></TextBlock>
+        <TextBlock HorizontalAlignment="Center">
+            <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">Get 1 point for every Good instructor you can click on.</TextBox></TextBlock>
+        <TextBlock HorizontalAlignment="Center">
+            <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">Lose 1 point for every Bad instructor you click on.</TextBox></TextBlock>
+        <TextBlock HorizontalAlignment="Center">
+            <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">   You can only hit 3 Bad Instructors before you lose.</TextBox>
+             </TextBlock>
+        <TextBlock HorizontalAlignment="Center">
+            <TextBox BorderThickness="0" AcceptsReturn="True" TextWrapping="Wrap">Completely miss 3 Times in a row and you lose.</TextBox>
+        </TextBlock>
+        <TextBlock></TextBlock>
+        <Button Name="GoButton" HorizontalAlignment="Center" Click="Start">Start Game</Button>
+    </StackPanel>
+</Window>

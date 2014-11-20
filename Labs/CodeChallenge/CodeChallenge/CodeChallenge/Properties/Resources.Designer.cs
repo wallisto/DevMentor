@@ -61,6 +61,26 @@ namespace XamlLab2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Andrew_Clymer {
+            get {
+                object obj = ResourceManager.GetObject("Andrew_Clymer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Crowd {
+            get {
+                object obj = ResourceManager.GetObject("Crowd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream Evil_Laugh {
@@ -75,6 +95,26 @@ namespace XamlLab2.Properties {
         internal static System.IO.UnmanagedMemoryStream laugh_x {
             get {
                 return ResourceManager.GetStream("laugh_x", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Michael_Kennedy {
+            get {
+                object obj = ResourceManager.GetObject("Michael_Kennedy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Richard_Blewett {
+            get {
+                object obj = ResourceManager.GetObject("Richard_Blewett", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

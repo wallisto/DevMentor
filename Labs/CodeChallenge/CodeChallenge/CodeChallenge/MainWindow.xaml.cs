@@ -36,9 +36,9 @@ namespace XamlLab2
         {
             InitializeComponent();
 
-            if (!File.Exists("..\\..\\HighScores.txt"))
+            if (!File.Exists("HighScores.txt"))
             {
-                writer = File.CreateText("..\\..\\HighScores.txt");
+                writer = File.CreateText("HighScores.txt");
                 writer.Close();
             }
 
@@ -46,6 +46,9 @@ namespace XamlLab2
             {
                 Name = "Player1",
                 Score = 0,
+                // Can't pass in the image, not sure how to do it with URI?
+                GoodImage = new Uri(null),
+                BadImage = new Uri(null)
             };
 
             DataContext = player;
@@ -57,8 +60,10 @@ namespace XamlLab2
         Random r = new Random();
         private void GoodRectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //Color c = RandomColor();
-            //goodRectangle.Fill = new SolidColorBrush(c);
+
+            var uri = goodImage.UriSource;
+            goodImage.UriSource = new Uri("Images\\Michael_Kennedy.jpg");
+
             if (gameInProgress)
             {
                 UpdateScore(+1);
@@ -203,7 +208,7 @@ namespace XamlLab2
         private void EndGame()
         {
             gameInProgress = false;
-            File.AppendAllText(@"..\..\HighScores.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
+            File.AppendAllText(@"HighScores.txt", ((User)DataContext).Name + "\t" + ((User)DataContext).Score + Environment.NewLine);
 
             
             var win = new EndGameWindow(player.Score);
@@ -241,12 +246,27 @@ namespace XamlLab2
 
     public class User : INotifyPropertyChanged
     {
-        private int score;
         public string Name { get; set; }
+
+        private int score;
         public int Score
         {
             get { return score; }
             set { score = value; PropertyChanged(this, new PropertyChangedEventArgs("Score")); }
+        }
+
+        private Uri goodImage;
+        public Uri GoodImage
+        {
+            get { return goodImage; }
+            set { goodImage = value; PropertyChanged(this, new PropertyChangedEventArgs("GoodImage")); }
+        }
+
+        private Uri badImage;
+        public Uri BadImage
+        {
+            get { return badImage; }
+            set { badImage = value; PropertyChanged(this, new PropertyChangedEventArgs("BadImage")); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate {};

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -53,11 +54,8 @@ namespace XamlLab2
         {
             List<User> top10 = new List<User>();
 
-            string line;
-            using (StreamReader reader = new StreamReader("..\\..\\HighScores.txt"))
-            {
-
-                while ((line = reader.ReadLine()) != null)
+            var file = File.ReadAllLines("HighScores.txt");
+                foreach(var line in file)
                 {
                     top10.Add(new User
                     {
@@ -66,8 +64,6 @@ namespace XamlLab2
                     }
                         );
                 }
-
-            }
 
             List<User> orderedPlayers = top10.OrderByDescending(u => u.Score).ToList<User>();
 
@@ -87,12 +83,14 @@ namespace XamlLab2
             if (dialogResult == MessageBoxResult.Yes)
             {
                 ClearHighScores();
+                this.Close();
             }
         }
 
         private void ClearHighScores()
         {
-            File.CreateText("..\\..\\HighScores.txt");
+            File.CreateText("HighScores.txt");
+            
         }
     }
 

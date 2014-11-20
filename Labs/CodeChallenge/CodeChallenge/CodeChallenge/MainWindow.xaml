@@ -9,8 +9,8 @@
                <TextBox Width="150" x:Name="PlayerName" Text="{Binding Name}"/>
             </TextBlock>
             <Button Width="70" Click="GameStarts" Content="Start Game"/>
-            <TextBlock Width="120" HorizontalAlignment="Right" Text="SCORE" FontSize="15" FontWeight="Bold" Foreground="Red" >
-               <TextBox Width="50" x:Name="ScoreBox" Text="{Binding Score}"/>
+            <TextBlock Width="120" HorizontalAlignment="Right" Text="SCORE" FontSize="15" FontWeight="Bold" Foreground="Red">
+               <TextBox Width="50" x:Name="ScoreBox" Text="{Binding Score}" IsReadOnly="True"/>
             </TextBlock>
         </Grid>
         <Grid Background="Transparent" Height="1000" Width="1800" >
@@ -32,7 +32,7 @@
                     <Ellipse.Fill>
                         <ImageBrush>
                         <ImageBrush.ImageSource>
-                                <BitmapImage UriSource="Images\Richard_Blewett.jpg"/>
+                                <BitmapImage x:Name="badImage" UriSource="Images\Richard_Blewett.jpg"/>
                         </ImageBrush.ImageSource>
                         </ImageBrush>
                     </Ellipse.Fill>
@@ -42,7 +42,8 @@
                     <Ellipse.Fill>
                         <ImageBrush>
                             <ImageBrush.ImageSource>
-                                <BitmapImage UriSource="Images\Andrew_Clymer.jpg"/>
+                                <BitmapImage x:Name="goodImage" UriSource="Images\Andrew_Clymer.jpg"/>
+                                <!--<BitmapImage x:Name="goodImage" UriSource="{Binding GoodImage}"/>-->
                             </ImageBrush.ImageSource>
                         </ImageBrush>
                     </Ellipse.Fill>

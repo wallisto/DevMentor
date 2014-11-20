@@ -27,7 +27,6 @@ namespace XamlLab2
         private TimeSpan gameLength;
         private bool gameInProgress;
         private DateTime gameEnd;
-        private TextWriter writer;
         private int numberOfTimesHitBadRectangle;
         private int numberOfTimesMissedRectangle;
         public User player;
@@ -38,11 +37,7 @@ namespace XamlLab2
         {
             InitializeComponent();
 
-            if (!File.Exists("HighScores.txt"))
-            {
-                writer = File.CreateText("HighScores.txt");
-                writer.Close();
-            }
+           
 
             player = new User
             {
@@ -66,7 +61,7 @@ namespace XamlLab2
             //var uri = goodImage.UriSource;
             //goodImage.UriSource = new Uri("Images\\Michael_Kennedy.jpg");
 
-            goodImage.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Michael_Kennedy.jpg");
+            //goodImage.UriSource = new Uri(@"pack://application:,,,/XamlLab2;component/Images/Michael_Kennedy.jpg");
 
             if (gameInProgress)
             {
@@ -172,21 +167,7 @@ namespace XamlLab2
             {
                 if (DateTime.Now < gameEnd)
                 {
-                    ChooseWhichRectangleToShow();
-                    int randomX = r.Next(1400);
-                    int randomY = r.Next(600);
-                    Canvas.SetLeft(badRectangle, randomX);
-                    Canvas.SetTop(badRectangle, randomY);
-                    Canvas.SetLeft(goodRectangle, randomX);
-                    Canvas.SetTop(goodRectangle, randomY);
-                    if (Easy !=null)
-                    {
-                        int randomSize = r.Next(20, 100);
-                        goodRectangle.Height = randomSize;
-                        goodRectangle.Width = randomSize;
-                        badRectangle.Height = randomSize;
-                        badRectangle.Width = randomSize;
-                    }
+                    MoveRectangle();
                     numberOfTimesMissedRectangle++;
 
                     //Add sound
@@ -200,6 +181,25 @@ namespace XamlLab2
                 {
                     EndGame();
                 }
+            }
+        }
+
+        private void MoveRectangle()
+        {
+            ChooseWhichRectangleToShow();
+            int randomX = r.Next(1400);
+            int randomY = r.Next(600);
+            Canvas.SetLeft(badRectangle, randomX);
+            Canvas.SetTop(badRectangle, randomY);
+            Canvas.SetLeft(goodRectangle, randomX);
+            Canvas.SetTop(goodRectangle, randomY);
+            if (Easy != null)
+            {
+                int randomSize = r.Next(20, 100);
+                goodRectangle.Height = randomSize;
+                goodRectangle.Width = randomSize;
+                badRectangle.Height = randomSize;
+                badRectangle.Width = randomSize;
             }
         }
 
@@ -218,8 +218,8 @@ namespace XamlLab2
 
         public void ActuallyStartGame()
         {
-            goodRectangle.Visibility = Visibility.Visible;
-            badRectangle.Visibility = Visibility.Visible;
+            //goodRectangle.Visibility = Visibility.Visible;
+            //badRectangle.Visibility = Visibility.Visible;
 
             gameLength = new TimeSpan(100000000);
             gameInProgress = true;
@@ -227,6 +227,8 @@ namespace XamlLab2
             numberOfTimesHitBadRectangle = 0;
             numberOfTimesMissedRectangle = 0;
             player.Score = 0;
+
+            MoveRectangle();
         }
 
         private void UpdateScore(int increase)

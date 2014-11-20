@@ -31,7 +31,9 @@ namespace XamlLab2
 
         private void Andrew_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-           // player.GoodImage = new Uri(null);
+            var image = new BitmapImage(new Uri(@"pack://application:,,,/XamlLab2;component/Images/Andrew_Clymer.jpg"));
+
+            mainWindow.goodRectangle.Fill = new ImageBrush(image);
 
             Andrew.StrokeThickness = 2;
             Andrew.Stroke = Brushes.Green;
@@ -55,7 +57,9 @@ namespace XamlLab2
 
         private void Rich_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-          //  player.GoodImage = new Uri(null);
+            var image = new BitmapImage(new Uri(@"pack://application:,,,/XamlLab2;component/Images/Richard_Blewett.jpg"));
+
+            mainWindow.goodRectangle.Fill = new ImageBrush(image);
 
             Rich.StrokeThickness = 2;
             Rich.Stroke = Brushes.Green;
@@ -79,7 +83,9 @@ namespace XamlLab2
 
         private void Mike_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-         //   player.GoodImage = new Uri(null);
+            var image = new BitmapImage(new Uri(@"pack://application:,,,/XamlLab2;component/Images/Michael_Kennedy.jpg"));
+
+            mainWindow.goodRectangle.Fill = new ImageBrush(image);
 
             Mike.StrokeThickness = 2;
             Mike.Stroke = Brushes.Green;
@@ -103,7 +109,10 @@ namespace XamlLab2
 
         private void Andrew_Bad_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-         //   player.BadImage = new Uri(null);
+            var image = new BitmapImage(new Uri(@"pack://application:,,,/XamlLab2;component/Images/Andrew_Clymer.jpg"));
+
+            mainWindow.badRectangle.Fill = new ImageBrush(image);
+
             Andrew_Bad.StrokeThickness = 2;
             Andrew_Bad.Stroke = Brushes.Red;
 
@@ -115,7 +124,9 @@ namespace XamlLab2
 
         private void Rich_Bad_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-         //   player.BadImage = new Uri(null);
+            var image = new BitmapImage(new Uri(@"pack://application:,,,/XamlLab2;component/Images/Richard_Blewett.jpg"));
+
+            mainWindow.badRectangle.Fill = new ImageBrush(image);
 
             Rich_Bad.StrokeThickness = 2;
             Rich_Bad.Stroke = Brushes.Red;
@@ -128,7 +139,10 @@ namespace XamlLab2
 
         private void Mike_Bad_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
-         //   player.BadImage = new Uri(null);
+            var image = new BitmapImage(new Uri(@"pack://application:,,,/XamlLab2;component/Images/Michael_Kennedy.jpg"));
+
+            mainWindow.badRectangle.Fill = new ImageBrush(image);
+
             Mike_Bad.StrokeThickness = 2;
             Mike_Bad.Stroke = Brushes.Red;
 

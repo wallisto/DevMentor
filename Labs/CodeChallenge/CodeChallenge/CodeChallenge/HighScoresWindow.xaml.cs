@@ -27,31 +27,46 @@ namespace XamlLab2
         public HighScoresWindow(bool? easy)
         {
 
-           InitializeComponent();
+            InitializeComponent();
 
-           Easy = easy;
+            Easy = easy;
 
-           var top10players = Top10HighScores(Easy).Take<User>(10);
+            var top10players = Top10HighScores(Easy).Take<User>(10);
 
             string top10Names = null;
-           string top10Scores = null;
+            string top10Scores = null;
 
-           foreach (var player in top10players)
-           {
-               top10Names += player.Name + '\n';
-               top10Scores += player.Score.ToString() + '\n';
-           }
+            foreach (var player in top10players)
+            {
+                top10Names += player.Name + '\n';
+                top10Scores += player.Score.ToString() + '\n';
+            }
 
-           top10Names = top10Names.Remove((top10Names.Length - 1));
-           top10Scores = top10Scores.Remove((top10Scores.Length - 1));
+            top10Names = top10Names.Remove((top10Names.Length - 1));
+            top10Scores = top10Scores.Remove((top10Scores.Length - 1));
 
-           top10scores = new HighScores
-           {
-               Players = top10Names,
-               Scores = top10Scores
-           };
+            string difficulty;
+            if (Easy == null)
+            {
+                difficulty = "EASY";
+            }
+            else if (Easy.Value)
+            {
+                difficulty = "MEDIUM";
+            }
+            else
+            {
+                difficulty = "HARD";
+            }
 
-           DataContext = top10scores;
+            top10scores = new HighScores
+            {
+                Players = top10Names,
+                Scores = top10Scores,
+                Difficulty = difficulty
+            };
+
+            DataContext = top10scores;
         }
 
         public List<User> Top10HighScores(bool? easy)
@@ -121,6 +136,14 @@ namespace XamlLab2
 
     public class HighScores : INotifyPropertyChanged
     {
+        
+        private string difficulty;
+        public string Difficulty
+        {
+            get { return difficulty; }
+            set { difficulty = value; PropertyChanged(this, new PropertyChangedEventArgs("Difficulty")); }
+        }
+
         private string highScores;
         public string Scores
         {
